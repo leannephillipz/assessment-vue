@@ -6,9 +6,11 @@
 <div v-if="projects">
 <ul v-for="project in projects" :key="project.id" class="projects">
   <li class="name">
-<p>Project {{ project.number }}: {{ project.title }}  </p>
-<p>{{ project.desc }}</p>
-    </li>
+    <p>Project {{ project.number }}: {{ project.title }}  </p>
+    <p>{{ project.desc }}</p>
+    <p>Tasks:</p>
+    <div v-for="task in project.tasks" :key="task.id" class='pill'>{{ task.title }}</div>
+  </li>
 </ul>
 </div>
 <div v-else>
@@ -42,5 +44,10 @@ export default {
   margin-bottom: 1em ;
   padding: 1em;
   border: solid 1px gray;
+}
+
+.pill {
+  border-radius: .5em;
+  background:gray;
 }
 </style>
