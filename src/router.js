@@ -1,6 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "@/pages/index.vue";
-import Page from "@/pages/page.vue";
+import Projects from "@/pages/projects.vue";
 import Students from "@/pages/students.vue";
 import Student from "@/pages/student.vue";
 import NotFound from "@/pages/404.vue";
@@ -13,9 +13,9 @@ const routes = [
     component: Home,
   },
   {
-    path: "/page",
-    name: "page",
-    component: Page,
+    path: "/projects",
+    name: "Projects",
+    component: Projects,
   },
   {
     path: "/students",
@@ -23,7 +23,7 @@ const routes = [
     component: Students,
   },
   {
-    path: "/students/:slug",
+    path: "/student/:slug",
     name: "student",
     component: Student,
     props: true,

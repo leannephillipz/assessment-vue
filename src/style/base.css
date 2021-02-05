@@ -34,7 +34,7 @@ main {
   padding-top: 3em;
 }
 
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
   main {
   	margin-left:0;
   }
@@ -44,7 +44,7 @@ main {
 main {
   max-width:70%;
 }
-}
+} */
 
 
 .contain {

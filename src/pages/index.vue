@@ -10,8 +10,8 @@
 
 export default {
   name: 'home',
-  data() {
-  },
+  // data() {
+  // },
 
 
 }

@@ -3,36 +3,23 @@
 <p>Add Student</p>
 
     <div class="container">
-      <form class="stacked " >
+      <form @submit.prevent="handleSubmit" class="stacked" >
 
         <fieldset>
-          <label for="name">First Name</label>
-          <input type="text" name="fname" value="" class="fname" required>
-          <label for="name">Last Name</label>
-          <input type="text" name="lname" value="" class="lname" required>
-          <label for="name">Student ID</label>
-          <input type="text" name="sid" value="" class="sid" required>
+          <label for="fname">First Name</label>
+          <input v-model="fname" type="text" name="fname" class="fname">
+          <label for="lname">Last Name</label>
+          <input v-model="lname" type="text" name="lname" class="lname">
+          <!-- <label for="name">Student ID</label>
+          <input type="text" name="sid" value="" class="sid" > -->
         </fieldset>
 
 
-        <fieldset>
-          <label for="name">Level</label>
-          <input type="text" name="level" value="" class="level" placeholder="1,2,3" required>
-          <label for="name">Year</label>
-          <input type="text" name="year" value="" class="year" placeholder="1/2" required>
-          <label for="name">Group</label>
-          <input type="text" name="group" value="" class="group" placeholder="a,b,c..." required>
-        </fieldset>
+        <label for="flag">Flag- Hit enter to add a new tag before submitting.</label>
+        <input v-model="flag" type="text" name="flag" class="flag" @keydown.enter.prevent="handleKeydown">
 
-        <label for="name">Flag</label>
-        <select class="" name="">
-          <option value="">Select...</option>
-          <option value="EHCP">EHCP</option>
-          <option value="EHCP">Self Disclosure</option>
-          <option value="EHCP">Other Support needs</option>
-        </select>
-        <label for="note">Note</label>
-        <textarea name="note" rows="8" cols="80" class="note" ></textarea>
+        <div v-for="flag in flags" :key="flag" class="pill">
+        #{{ flag }}</div>
         <input type="submit" name="" value="Add" class="priority">
       </form>
       <div class="feedback">
@@ -40,21 +27,61 @@
       </div>
     </div>
 
-    
+
 </main>
 </template>
 
 
 
 <script>
+import { ref } from 'vue'
+import {useRouter} from 'vue-router'
 
 export default {
-  name: 'home',
-  data() {
-  },
+  setup() {
+    const fname = ref('')
+    const lname = ref('')
+    const flag = ref('')
+    const flags = ref([])
+
+    const router = useRouter()
+
+    const handleKeydown = () => {
+      if (!flags.value.includes(flag.value))
+        flag.value = flag.value.replace(/\s/, '') // remove whitespace
+        flags.value.push(flag.value)
+        flag.value = ''
+      }
+
+    const handleSubmit = async () => {
+      const student = {
+        fname: fname.value, lname: lname.value, flags: flags.value
+      }
+      await fetch('http://localhost:3000/students', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(student)
+      })
+
+      router.push({name: 'Home'})
+    }
 
 
+    return {fname, lname, handleKeydown, flags, flag, handleSubmit}
+  }
 }
 
 
 </script>
+
+<style>
+.feedback {}
+
+  .pill {
+    border-radius: .5em;
+    background: #7da017;
+    display: inline-block;
+    padding:0.5em;
+    margin-right: .3em;
+  }
+</style>

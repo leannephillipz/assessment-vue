@@ -1,6 +1,6 @@
 <template>
 <main>
-<p>page</p>
+<p>Projects</p>
 </main>
 </template>
 
@@ -8,9 +8,8 @@
 <script>
 
 export default {
-  name: 'page',
-  data() {
-  },
+  // data() {
+  // },
 
 
 }

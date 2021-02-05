@@ -9,11 +9,7 @@
 <script>
 
 export default {
-  name: 'home',
-  data() {
-  },
-
-
+  name: '404'
 }
 
 

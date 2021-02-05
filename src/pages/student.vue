@@ -1,40 +1,34 @@
 <template>
 <main>
-  
-<p>Student</p>
-<p>Id : {{slug}}</p>
-<div v-if="student">Got it </div>
-<div v-else>
-  Trying to get data.
-</div>
+
+  <p>Student - Slug: {{ slug }} </p>
+  <div v-if="error">{{ error }}</div>
+    <div v-if="student" class="student">
+    <p>{{ student.fname }} {{ student.lname }}</p>
+    </div>
+    <div v-else>
+      <p>Loading... (Fake Delay set up could add loader)</p>
+    </div>
+<!-- <div v-else>
+  Trying to get data, but we don't have an error.
+</div> -->
 </main>
 </template>
 
 
 
 <script>
-import studata from '@/data/students.json'
-export default {
-  name: 'home',
-  props: ['slug'],
-//   data() {
-//     return {
-//         slug: this.$route.params.slug
-//     }
-//   }
-  data(){
-    return {
-      student: null,
-      id: this.$route.params.slug
-    }
-  }, 
-  mounted(){
-     studata.filter(function(item){
-      item.sid = this.id
-      this.student = item.sid
-      console.log(item.sid);
-    })
+// @ is an alias to /src
+import getStudent from '../composables/getstudent'
 
+export default {
+  name: 'student',
+  props: ['slug'],
+  setup(props) {
+    const { student, error, load } = getStudent(props.slug)
+    load()
+    // console.log(student)
+    return { student, error }
   }
 
 }
