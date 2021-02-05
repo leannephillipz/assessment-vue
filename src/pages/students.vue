@@ -1,6 +1,6 @@
 <template>
 <main>
-<p>Students</p>
+<h1>Students</h1>
 <div v-if="error">{{ error }}</div>
 <div v-if="students.length">
 <ul v-for="student in students" :key="student.id">

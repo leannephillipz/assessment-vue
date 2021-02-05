@@ -1,6 +1,6 @@
 <template>
 <main>
-<p>Add Student</p>
+<h1>Add Student</h1>
 
     <div class="container">
       <form @submit.prevent="handleSubmit" class="stacked" >
@@ -43,6 +43,7 @@ export default {
     const lname = ref('')
     const flag = ref('')
     const flags = ref([])
+
 
     const router = useRouter()
 

@@ -5,6 +5,7 @@ body {
     /* background-color: #f3f3f0 #fbfbf9 #f9f9fb; */
     background-color: #46494c;
     height:100%;
+    font-size: 16px;
 }
 
 
@@ -100,17 +101,17 @@ h6 {
 	padding: 0 0 1.5rem 0;
 }
 
-h1 {
+/* h1 {
     font-size: 4em;
 	   max-width:500px;
     white-space: pre;
-}
+} */
 
-h2 {
+/* h2 {
 	font-size: 1.5em;
 	text-transform:uppercase;
 	line-height: 1;
-}
+} */
 
 
 h3, h4 {
