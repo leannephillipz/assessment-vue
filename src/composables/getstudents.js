@@ -23,7 +23,7 @@ const getStudents = () => {
       error.value = err.message
     }
   }
-
+  // console.log(students, error);
   return { students, error, load }
 }
 
