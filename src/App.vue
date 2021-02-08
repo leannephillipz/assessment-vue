@@ -1,6 +1,6 @@
 <template>
-    
-    <div class="page">
+
+    <div class="page container">
       <Nav/>
       <router-view />
   </div>
@@ -21,5 +21,6 @@ export default {
 <style>
 @import 'style/normalise.css';
 @import 'style/base.css';
+@import 'style/flex.css';
 @import 'style/theme.css';
 </style>

@@ -1,3 +1,12 @@
+body {
+    font-weight: normal;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #f3f3f0;
+    /* background-color: #f3f3f0 #fbfbf9 #f9f9fb; */
+    background-color: #25292f;
+    height:100%;
+}
+
 nav {
     position:fixed;
     width: 180px;
@@ -5,216 +14,261 @@ nav {
     padding: 2em;
 }
 
-  nav ul {
-    margin-top: 3rem;
-    /* text-align: right; */
-  }
+nav a {color:rgba(255,255,255,0.8);}
 
-  nav a {color:rgba(255,255,255,0.8);}
-
-  /* @media (max-width: 1000px) {
-
-    nav {
-        position:fixed;
-        width: auto;
-        min-width: auto;
-        background:rgba(50,50,50,1);
-    }
-
-    nav ul {
-      margin-top: 0;
-      text-align: left;
-    }
-  } */
+nav ul {
+  list-style:none;
+  display:block;
+}
 
 
-  .name {
+nav li, menu li {margin:0; padding:0;}
+nav a, menu a {display:block; margin: 1rem 0;}
+nav {z-index:2;}
+
+main {
+	margin-left:240px;
+  box-sizing: border-box;
+  padding-top: 3em;
+  padding-right: 2em;
+}
+
+
+.grid {
     text-transform: capitalize;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-/* Buttons
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.btn,
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-    display: inline-block;
-    /*height: 38px;*/
-    padding: 0 30px;
-    color: #fff;
-    text-align: center;
-    font-size: 1em;
-    line-height: 38px;
-    text-transform: uppercase;
-    text-decoration: none;
-    white-space: nowrap;
-    border-radius: 4px;
-    cursor: pointer;
-    box-sizing: border-box;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
-	/*background-color: transparent;*/
-    background: #666;
-    outline: 0;
-    border: 0;
 }
-
-.btn:hover,
-button:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover{
-    color: #eee;
-    background: #242322;
-    outline: 0;
+.grid .header {
+  border-bottom: 1px solid #c1c1c1;
+  border-top: 1px solid #c1c1c1;
+  margin:.5em 0;
 }
 
 
-@media (max-width: 750px) {
-    .btn {
-        margin: 0.2em 0;
-    }
+.grid a ul:hover {
+  background-color:#52575a;
+}
+
+/* .grid .colx4 li:last-of-type{
+  text-align: right;
+} */
+
+/* .student.grid ul ul li:nth-child(2){
+  padding: 0 1em;
+}
+
+.student.grid .col1{
+  flex: 1 1 10%;
+}
+.student.grid .col2{
+  flex: 1 1 90%;
+} */
+
+
+
+
+h1 {
+  margin:0;
+  margin-bottom:1em;
+  line-height: 1.2;
 }
 
 
-/* Forms
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-form {    max-width: 400px;}
-
-
-input,
-textarea,
-select,
-fieldset {
-  margin-bottom: 1.5em; }
-
-input,
-textarea,
-select {
-  	padding: 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
-    width: 100%;
-    background-color: #fff;
-    box-shadow: none;
-    box-sizing: border-box;
-    border: 2px solid #c0c1b3;
-    border-radius: 4px;
-	   -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    margin-right: auto;
+h4.breadcrumbs  {
+  font-size:0.9em;
+  font-weight: normal;
+  color:#9e9c9c;
 }
 
 
-input,
-select {
-    box-sizing: border-box;
-    transition: all 0.5s ease 0s;
-    -webkit-transition: all 0.5s ease 0s;
-    -moz-transition: all 0.5s ease 0s;
+/* .moreorless {
+  display:none;
+} */
+
+
+.grade .checks {
+  margin-bottom: 1em;
 }
 
-input, textarea, select {
-	margin-bottom: 1em;
-	border: 2px solid #c0c1b3;
-	}
-
-
-textarea {
-    width: 100%;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    margin: 8px 0;
-    min-height: 65px;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-    border: 2px solid #000;
-    outline:none;
+.grade .info {
+border-left:solid 1px #c1c1c1;
+padding-left:1em;
 }
 
 
-fieldset {
-    padding: 0;
-    margin: 8px 0;
-    border-width: 0;
+.grade  h3 {
+  margin:0;
 }
 
-fieldset .field-group:first-of-type{margin-right: 20px;}
+.assessment > *:last-child {
+  margin-left:3em;
+}
+.checks .tooltip {
+  position: relative;
+display: inline-block;
+}
+.checks .tooltip {margin:0;    color: lightgray;}
 
-fieldset .field-group{
-	width: calc(50% - 10px);
-    float: left;
-    }
-
-input[type="checkbox"]{
-    appearance: checkbox;
-    -webkit-appearance: checkbox;
-    -moz-appearance: checkbox;
-	}
-input[type="radio"]{
-    appearance: radio;
-    -webkit-appearance: radio;
-    -moz-appearance: radio;
-	}
-
-input[type="submit"] {width:auto; border:0; margin:10px 0;}
-input:disabled {opacity: 0.3; cursor: not-allowed;}
-
-form label {display:inline-block;}
-form.stacked label{display:block;}
-
-input[type=text], input[type=email] {}
-input[type="password"] {
-	-webkit-text-security: none !important;
+.checks .tooltip i {
+  visibility: hidden;
+      background: #c7c7c7;
+      background-color: #555;
+      color: #fff;
+      padding: .3em .5em;
+      border-radius: .3em;
+      width: 200px;
+      border-radius: 6px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: block;
+      position: absolute;
+      z-index: 1;
+      top: -65%;
+      left: 30px;
 }
 
-
-#response {
-    padding: 20px;
-    background-color: var(--color1);
-    color: #333;
-    transition: all 0.5s ease 0s;
-    -webkit-transition: all 0.5s ease 0s;
-    -moz-transition: all 0.5s ease 0s;
-     /*display: none;*/
+.checks .tooltip i::after {
+  content: "";
+      position: absolute;
+      top: 50%;
+      left: -10px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent #555 transparent transparent;
 }
 
-@media (max-width: 750px) {
-    form {
-        margin: 0;
-        padding: 0;
-		width:100%;;
-    }
-    form div {
-        padding-top: 0;
-    }
-    label {
-        margin: 20px 0 0;
-    }
-
-	fieldset .field-group{
-	width: 100%;
-    float: none;
-    }
+.checks .tooltip:hover > i{
+  visibility: visible;
+  opacity: 1;
+}
+.checks checkbox{
+  margin:0;
 }
 
 
-input[type="submit"].priority {
-  background-color:#142e8c;
+
+
+.details {
+  justify-content: space-between;
+}
+
+.pill {
+  background: #d4d4d4;
+  margin: 0;
+  border-radius: .2em;
+  padding: .5em 1em;
+  line-height: 1;
+  display: inline-block;
+}
+.pill.referral {
+  background:#b54747;
+  color:#fff;
+}
+.pill.pass {
+  background: #519a51;
+  color:#fff;
+}
+.pill.good {
+  background: green;
+  color:#fff;
+}
+.pill.excellent{
+  background: green;
+  color:#fff;
+}
+
+.pill.ehcp{
+  background: #df7514;
+  color:#fff;
+}
+
+.grade .grades {
+margin-bottom:3em;
+}
+.grade .grades .pill {
+padding: 1em 1.5em;
+}
+
+.flags p {
+  display: block;
+  margin-left: 0.2em;
+}
+.flags .pill { display: inline;   margin:0.2em;}
+
+
+.material-icons {
+  transform: translateY(5px);
+}
+
+
+/* .details div div:nth-child(-n+2) {
+  border:solid 1px #c1c1c1;
+} */
+
+/* .grid.feedback {font-size:0.9em;} */
+
+.grid.feedback .flex > *:first-child {
+  flex: 0 0 5%;
+}
+.grid.feedback .flex > *:last-child {
+  flex: 0 0 20%;
+  text-align: right;
+}
+
+.grid.feedback .flex > *:not(:first-child):not(:last-child)  {
+  flex: 1 1 25%;
+}
+
+
+.grid.feedback ul {
+  box-sizing: border-box;
+  border-bottom: solid 1px #ccc;
+}
+.grid.feedback h4 + ul{
+  border-top: solid 1px #ccc;
+}
+
+.summary {
+  background-color: #ccc;
+  padding:1em;
+  margin-bottom:2em;
+}
+
+.summary h4{
+  margin-top:0;
+}
+.summary p:last-of-type{margin-bottom:0;}
+
+
+.profile .details .data p {
+  margin:0.5em 0;
+}
+
+.box {
+  width:100%; display: block; height: 4em; border: solid 1px #c1c1c1; padding: .5em;
+}
+
+.studentprojectfeedback .details {
+  justify-content: space-between;
+}
+.studentprojectfeedback .details > *:first-child{
+flex: 1 0 70%;
+margin-right:3em;
+}
+
+.studentprojectfeedback .details > *:last-child{
+flex: 0 1 25%;
+}
+
+
+.grade .assessment.flex > *:first-child {
+  flex: 1 1 70%;
+}
+
+.action {overflow: auto;}
+.action .btn {
+
+    padding: 1em 2em;
+    font-size: 1.2em;
+    background: #4183c4;
 }
