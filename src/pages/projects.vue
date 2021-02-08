@@ -77,4 +77,7 @@ export default {
   border-radius: .5em;
   background:gray;
 }
+.desc {display:none;}
+
+.show {display:block;}
 </style>

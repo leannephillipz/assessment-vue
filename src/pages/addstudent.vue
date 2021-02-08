@@ -2,7 +2,6 @@
 <main>
 <h1>Add Student</h1>
 
-    <div class="container">
       <form @submit.prevent="handleSubmit" class="stacked" >
 
         <fieldset>
@@ -25,7 +24,6 @@
       <div class="feedback">
         <p>Feedback</p>
       </div>
-    </div>
 
 
 </main>
