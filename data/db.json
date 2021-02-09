@@ -5,6 +5,34 @@
       "sid": 1,
       "fname": "bugs",
       "lname": "bunny"
+    },
+    {
+      "id": 2,
+      "sid": 2,
+      "fname": "daffy",
+      "lname": "duck"
+    },
+    {
+      "fname": "Pink",
+      "lname": "panther",
+      "flags": [
+        "EHCP"
+      ],
+      "id": 3
+    },
+    {
+      "fname": "Homer",
+      "lname": "Simpson",
+      "flags": [
+        "HN"
+      ],
+      "id": 4
+    },
+    {
+      "fname": "Freg",
+      "lname": "Flintstone",
+      "flags": [],
+      "id": 5
     }
   ],
   "projects": [
@@ -20,12 +48,45 @@
       "id": 1,
       "level": "3",
       "year": "1",
+      "title": "Potions Arts",
+      "awardbody": "Hogwarts",
+      "qual": "Diploma",
+      "subject": "Magic",
+      "qtitle": "Creative Magic Production",
+      "code": "FE123456"
+    },
+    {
+      "id": 1,
+      "level": "3",
+      "year": "1",
       "title": "Magic Spells",
       "awardbody": "Hogwarts",
       "qual": "Diploma",
       "subject": "Magic",
       "qtitle": "Creative Magic Production",
       "code": "FE42804892"
+    },
+    {
+      "id": 1,
+      "level": "3",
+      "year": "2",
+      "title": "Magic Spells",
+      "awardbody": "Hogwarts",
+      "qual": "Diploma",
+      "subject": "Magic",
+      "qtitle": "Creative Magic Production",
+      "code": "FE987654"
+    },
+    {
+      "id": 1,
+      "level": "2",
+      "year": "1",
+      "title": "Magic Spells",
+      "awardbody": "Hogwarts",
+      "qual": "Certificate",
+      "subject": "Magic",
+      "qtitle": "Creative Magic Production",
+      "code": "FE987654"
     }
   ]
 }
