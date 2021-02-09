@@ -7,6 +7,7 @@ import NotFound from "@/pages/404.vue";
 import AddStudent from "@/pages/addstudent.vue";
 import AddCourse from "@/pages/addcourse.vue";
 import Courses from "@/pages/courses.vue";
+import Grade from "@/pages/grade.vue";
 
 const routes = [
   {
@@ -47,6 +48,11 @@ const routes = [
     name: "courses",
     component: Courses,
     props: true,
+  },
+  {
+    path: "/grade",
+    name: "grade",
+    component: Grade,
   },
   //redirects
   {
