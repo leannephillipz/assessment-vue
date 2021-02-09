@@ -8,9 +8,6 @@
   <li>Year</li>
   <li>Title</li>
 </ul>
-</div>
-
-<!-- {{ courses }} this outputs data -->
 
 <div v-if="courses.length">
   <div v-for="course in courses" :key="course.id"><!-- this does not output the data -->
@@ -20,15 +17,17 @@
     <li>{{ course.title }}</li>
   </ul>
   </div>
-
 </div>
+
 <div v-else>
   <p>Loading... </p>
 </div>
+
+</div>
+
+
 </main>
 </template>
-
-
 
 <script>
 
