@@ -78,7 +78,7 @@ export default {
 
     methods: {
       putdata() {
-        this.course = {"lvl:": this.lvl, "year": this.year, "title:": this.title, "awardbody": this.awardbody, "qual": this.qual, "subject": this.subject, "qtitle": this.qtitle, "code": this.code}
+        this.course = {"lvl": this.lvl, "year": this.year, "title": this.title, "awardbody": this.awardbody, "qual": this.qual, "subject": this.subject, "qtitle": this.qtitle, "code": this.code}
 
         // console.log(this.course);
         // const router = useRouter()
