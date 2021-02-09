@@ -12,6 +12,7 @@ nav {
     width: 180px;
     height: 100%;
     padding: 2em;
+    background-color: #393b3e;
 }
 
 nav a {color:rgba(255,255,255,0.8);}
