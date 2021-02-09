@@ -3,5 +3,9 @@ module.exports = {
   assetsDir: 'assets',
   css: {
     sourceMap: true
+  },
+  configureWebpack: {
+    plugins: [
+    ]
   }
 }

@@ -5,34 +5,6 @@
       "sid": 1,
       "fname": "bugs",
       "lname": "bunny"
-    },
-    {
-      "id": 2,
-      "sid": 2,
-      "fname": "daffy",
-      "lname": "duck"
-    },
-    {
-      "fname": "Pink",
-      "lname": "panther",
-      "flags": [
-        "EHCP"
-      ],
-      "id": 3
-    },
-    {
-      "fname": "Homer",
-      "lname": "Simpson",
-      "flags": [
-        "HN"
-      ],
-      "id": 4
-    },
-    {
-      "fname": "Freg",
-      "lname": "Flintstone",
-      "flags": [],
-      "id": 5
     }
   ],
   "projects": [
@@ -40,50 +12,19 @@
       "id": 1,
       "desc": "With all we've been through, sometimes I'm amazed we're in as good condition as we are, what with the Rebellion and all. You know of the Rebellion against the Empire? That's how we came to be in your service, if you take my meaning, sir.",
       "number": "1",
-      "title": "Horror",
-      "tasks": [
-        {
-          "id": 1,
-          "desciption": "Skills Development",
-          "items": [],
-          "task": "1",
-          "title": "Workshops"
-        },
-        {
-          "id": 2,
-          "desciption": "Skills Development",
-          "items": [],
-          "task": "1",
-          "title": "Some other task"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "desc": "Sir, if you'll not be needing me, I'll close down for awhile. Sure, go ahead. What is it? Your fathers lightsaber. This is the weapon of a Jedi Knight. Not as clumsy or as random as a blaster. An elegant weapon for a more civilized time. ",
-      "number": "2",
-      "title": "Medievil",
-      "tasks": [
-        {
-          "id": 1,
-          "desciption": "Skills Development",
-          "items": [],
-          "task": "1",
-          "title": "Some other task"
-        }
-      ]
+      "title": "Horror"
     }
   ],
   "courses": [
     {
-      "lvl:": "3",
-      "year": "1",
-      "title:": "Games Development",
-      "awardbody": "University of the Arts London (UAL)",
-      "qual": "Diploma",
-      "subject": "Games Development",
-      "qtitle": "Creative Media Production and Technology Games Development",
       "id": 1,
+      "level": "3",
+      "year": "1",
+      "title": "Magic Spells",
+      "awardbody": "Hogwarts",
+      "qual": "Diploma",
+      "subject": "Magic",
+      "qtitle": "Creative Magic Production",
       "code": "FE42804892"
     }
   ]

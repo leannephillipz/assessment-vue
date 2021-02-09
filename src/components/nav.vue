@@ -5,7 +5,6 @@
           <li><router-link to="/">Home</router-link></li>
           <li><router-link to="/addstudent">Add Student</router-link></li>
           <li><router-link :to="{ name: 'students'}">Students</router-link></li>
-          <li><router-link to="/projects">Projects</router-link></li>
           <li><router-link to="/addcourse">Add Course</router-link></li>
           <li><router-link to="/courses">Courses</router-link></li>
         </ul>

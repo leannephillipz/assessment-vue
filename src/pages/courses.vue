@@ -1,5 +1,52 @@
 <template>
-  <main>
-    <p>hello</p>
-  </main>
+<main>
+<h1>Courses</h1>
+
+<div class="grid">
+<ul class="flex colx3 header">
+  <li>Level</li>
+  <li>Year</li>
+  <li>Title</li>
+</ul>
+</div>
+
+<!-- {{ courses }} this outputs data -->
+
+<div v-if="courses.length">
+  <div v-for="course in courses" :key="course.id"><!-- this does not output the data -->
+  <ul class="flex colx3">
+    <li>{{ course.level }}</li>
+    <li>{{ course.year }}</li>
+    <li>{{ course.title }}</li>
+  </ul>
+  </div>
+
+</div>
+<div v-else>
+  <p>Loading... </p>
+</div>
+</main>
 </template>
+
+
+
+<script>
+
+export default {
+    data() {
+      return {
+        courses: []
+      }
+    },
+      mounted(){
+        fetch('http://localhost:3000/courses/')
+        .then(response => response.json())
+        .then(data => this.courses = data)
+        .catch(err  => console.log(err.messsage))
+        console.log(this.courses)
+      }
+    }
+
+
+
+</script>

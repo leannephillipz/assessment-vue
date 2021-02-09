@@ -22,5 +22,6 @@ export default {
 @import 'style/normalise.css';
 @import 'style/base.css';
 @import 'style/flex.css';
+@import 'style/form.css';
 @import 'style/theme.css';
 </style>

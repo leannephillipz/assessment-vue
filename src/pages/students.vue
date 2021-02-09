@@ -1,7 +1,7 @@
 <template>
 <main>
 <h1>Students</h1>
-<div v-if="error">{{ error }}</div>
+
 
 <div v-if="students.length">
 
@@ -39,33 +39,19 @@
 
 
 <script>
-// import { computed, onMounted, onUnmounted, onUpdated } from 'vue'
-// import { ref } from 'vue'
-import getStudents from '../composables/getstudents'
-
-// import studata from '~/data/students.json'
-//
-// export default {
-//   name: 'home',
-//   setup() {
-//     const students = ref([
-//         // { fname: 'bugs', lname:'bunny', sid:'56454' },
-//         // { fname: 'daffy', lname:'duck', sid:'47864' }
-//       ])
-//       students.value = studata;
-//       return { students };
-//   }
-//
-// }
-
 export default {
-  setup() {
-    const { students, error, load } = getStudents()
-    load()
-
-    return { students, error }
-  }
-}
-
+    data() {
+      return {
+        students: []
+      }
+    },
+      mounted(){
+        fetch('http://localhost:3000/students/')
+        .then(response => response.json())
+        .then(data => this.students = data)
+        .catch(err  => console.log(err.messsage))
+        console.log(this.students)
+      }
+    }
 
 </script>
