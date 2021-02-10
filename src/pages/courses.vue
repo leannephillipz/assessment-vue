@@ -11,11 +11,13 @@
 
 <div v-if="courses.length">
   <div v-for="course in courses" :key="course.id"><!-- this does not output the data -->
-  <ul class="flex colx3">
-    <li>{{ course.level }}</li>
-    <li>{{ course.year }}</li>
-    <li>{{ course.title }}</li>
-  </ul>
+    <router-link :to="{name: 'course', params: { slug: course.id }}">
+    <ul class="flex colx3">
+      <li>{{ course.level }}</li>
+      <li>{{ course.year }}</li>
+      <li>{{ course.title }}</li>
+    </ul>
+    </router-link>
   </div>
 </div>
 
