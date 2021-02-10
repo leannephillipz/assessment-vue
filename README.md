@@ -1,5 +1,7 @@
 # asessment
 
+Using node package manager.
+
 ## Project setup
 ```
 npm install
