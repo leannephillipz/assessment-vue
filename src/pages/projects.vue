@@ -3,7 +3,7 @@
 <h1>Projects</h1>
 <!-- <div v-if="err">{{ err }}</div> -->
 
-<div v-if="projects">
+<!-- <div v-if="projects">
 <ul v-for="project in projects" :key="project.id" class="projects">
   <li class="name">
     <h2 @click="showDetails = !showDetails" >Project {{ project.number }}: {{ project.title }}  </h2>
@@ -17,7 +17,7 @@
 </div>
 <div v-else>
   <p>Loading... </p>
-</div>
+</div> -->
 </main>
 </template>
 
@@ -47,11 +47,11 @@ export default {
     }
   },
   mounted() {
-    fetch('http://localhost:3000/projects')
-      .then(res => res.json())
-      .then(data => this.projects = data)
-      .then(console.log(this.projects))
-      .catch(err => console.log(err))
+    // fetch('http://localhost:3000/projects')
+    //   .then(res => res.json())
+    //   .then(data => this.projects = data)
+    //   .then(console.log(this.projects))
+    //   .catch(err => console.log(err))
   },
   methods: {
   }
@@ -67,17 +67,5 @@ export default {
 
 <style scoped>
 
-.projects li {
-  margin-bottom: 1em ;
-  padding: 1em;
-  border: solid 1px gray;
-}
 
-.pill {
-  border-radius: .5em;
-  background:gray;
-}
-.desc {display:none;}
-
-.show {display:block;}
 </style>
