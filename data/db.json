@@ -4,13 +4,17 @@
       "id": 1,
       "sid": 1,
       "fname": "bugs",
-      "lname": "bunny"
+      "lname": "bunny",
+      "group": "a",
+      "status": "pass"
     },
     {
       "id": 2,
       "sid": 2,
       "fname": "daffy",
-      "lname": "duck"
+      "lname": "duck",
+      "group": "a",
+      "status": "pass"
     },
     {
       "fname": "Pink",
@@ -18,7 +22,9 @@
       "flags": [
         "EHCP"
       ],
-      "id": 3
+      "id": 3,
+      "group": "b",
+      "status": "pass"
     },
     {
       "fname": "Homer",
@@ -26,27 +32,23 @@
       "flags": [
         "HN"
       ],
-      "id": 4
+      "id": 4,
+      "group": "b",
+      "status": "referral"
     },
     {
       "fname": "Freg",
       "lname": "Flintstone",
       "flags": [],
-      "id": 5
-    }
-  ],
-  "projects": [
-    {
-      "id": 1,
-      "desc": "With all we've been through, sometimes I'm amazed we're in as good condition as we are, what with the Rebellion and all. You know of the Rebellion against the Empire? That's how we came to be in your service, if you take my meaning, sir.",
-      "number": "1",
-      "title": "Horror"
+      "id": 5,
+      "group": "c",
+      "status": "referral"
     }
   ],
   "courses": [
     {
       "id": 1,
-      "level": "3",
+      "lvl": "3",
       "year": "1",
       "title": "Potions Arts",
       "awardbody": "Hogwarts",
@@ -54,28 +56,24 @@
       "subject": "Magic",
       "qtitle": "Creative Magic Production",
       "code": "FE123456",
-      "assessment": [
+      "projects": [
         {
-          "board": "University of Magic London (UML)",
-          "units" : {
-            "unit": "1",
-            "items": [ {
-               "unit":"1.1",
-               "outcome":"1. Understand processes and technical skills used in creative media production.",
-               "criteria":"Apply understanding of a range of processes to support media activities.",
-               "Task Ref":"",
-               "Referral":"Insufficient evidence has been provided.",
-               "Pass":"You have applied a suitable level of understanding to a range of skills during this project and produced a satisfactory amount of work. I can see some improvement throughout the project.",
-               "Good":"You have applied a good level of understanding to a range of skills during this project and produced a consistent amount of work. I can see improvement throughout the project.",
-               "Excellent":"You have applied an excellent level of understanding to a range of skills during this project and produced a professional amount of work. I can see a substantial improvement throughout the project."
-            }]
-          }
+          "id": 1,
+          "desc": "With all we've been through, sometimes I'm amazed we're in as good condition as we are, what with the Rebellion and all. You know of the Rebellion against the Empire? That's how we came to be in your service, if you take my meaning, sir.",
+          "number": "1",
+          "title": "Horror"
+        },
+        {
+          "id": 2,
+          "desc": "With all we've been through, sometimes I'm amazed we're in as good condition as we are, what with the Rebellion and all. You know of the Rebellion against the Empire? That's how we came to be in your service, if you take my meaning, sir.",
+          "number": "2",
+          "title": "Medievil"
         }
       ]
     },
     {
       "id": 2,
-      "level": "3",
+      "lvl": "3",
       "year": "1",
       "title": "Magic Spells",
       "awardbody": "Hogwarts",
@@ -274,7 +272,7 @@
     },
     {
       "id": 3,
-      "level": "3",
+      "lvl": "3",
       "year": "2",
       "title": "Magic Spells",
       "awardbody": "Hogwarts",
@@ -473,7 +471,7 @@
     },
     {
       "id": 4,
-      "level": "2",
+      "lvl": "2",
       "year": "1",
       "title": "Magic Spells",
       "awardbody": "Hogwarts",
