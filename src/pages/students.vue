@@ -16,7 +16,8 @@
   <div v-for="student in students" :key="student.id">
     <router-link :to="{name: 'student', params: { slug: student.id }}">
     <ul class="flex colx5">
-      <li>*</li>
+      <li><span v-for="flag in student.flags" :key="flag">
+        <em v-if="flag">*</em></span></li>
       <li>{{ student.fname }} </li>
       <li>{{ student.lname }}</li>
       <li>{{ student.group }}</li>

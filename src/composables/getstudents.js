@@ -18,7 +18,7 @@ const getStudents = () => {
         throw Error('no available data')
       }
       students.value = await data.json()
-      console.log(students.value) //returns proxy
+      // console.log(students.value) //returns proxy
     }
     catch(err) {
       error.value = err.message

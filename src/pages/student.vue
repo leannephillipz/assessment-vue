@@ -10,8 +10,10 @@
     <p>Status: {{ student.status }}</p>
     <!-- <p>Flags: {{ student.flags }}</p> -->
     <div v-if="student.flags">
-    <p v-for="flag in student.flags" :key="flag">Flags: {{ flag }} </p>
+    <p>Flags: <span v-for="flag in student.flags" :key="flag"> <em>{{ flag }} </em></span> </p>
   </div>
+
+
 
     </div>
     <div v-else>
@@ -43,3 +45,9 @@ export default {
 
 
 </script>
+
+<style scoped>
+
+em {display: inline-block;
+    margin-right: 0.5em;}
+</style>

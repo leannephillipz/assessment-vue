@@ -21,7 +21,7 @@
             <div v-for="unit in units" :key="unit.id" class="unit">
             <p>Unit ID:{{ unit.id }}</p>
             <div v-for="item in unit.items" :key="item.id">
-            <p>{{ item.id }} Learning outcomes: {{ item.outcome }}</p>
+            <p>ID: {{ item.id }}<br> Learning outcome: {{ item.outcome }}</p>
           </div>
           </div>
         </div>

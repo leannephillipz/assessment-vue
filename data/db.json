@@ -7,7 +7,7 @@
          "lname":"bunny",
          "group":"a",
          "status":"pass",
-         "flags": [ "EHCP" ]
+         "flags": [ "EHCP", "HN" ]
       },
       {
          "id":2,
@@ -30,20 +30,16 @@
       {
          "fname":"Homer",
          "lname":"Simpson",
-         "flags":[
-            "HN"
-         ],
+         "flags":[],
          "id":4,
          "group":"b",
          "status":"referral",
          "sid": "546789"
       },
       {
-         "fname":"Freg",
+         "fname":"Fred",
          "lname":"Flintstone",
-         "flags":[
-
-         ],
+         "flags":[ ],
          "id":5,
          "group":"c",
          "status":"referral",
