@@ -1,13 +1,21 @@
 <template>
 <main>
 
-  <p>Student - Slug: {{ slug }} </p>
+  <p>Student</p>
   <div v-if="error">{{ error }}</div>
     <div v-if="student" class="student">
-    <p>{{ student.fname }} {{ student.lname }}</p>
+    <h2>{{ student.fname }} {{ student.lname }}</h2>
+    <p>SID: {{ student.sid }}</p>
+    <p>Group: {{ student.group }}</p>
+    <p>Status: {{ student.status }}</p>
+    <!-- <p>Flags: {{ student.flags }}</p> -->
+    <div v-if="student.flags">
+    <p v-for="flag in student.flags" :key="flag">Flags: {{ flag }} </p>
+  </div>
+
     </div>
     <div v-else>
-      <p>Loading... (Fake Delay set up could add loader)</p>
+      <p>Loading... </p>
     </div>
 <!-- <div v-else>
   Trying to get data, but we don't have an error.
@@ -27,7 +35,7 @@ export default {
   setup(props) {
     const { student, error, load } = getStudent(props.slug)
     load()
-    // console.log(student)
+    console.log(student)
     return { student, error }
   }
 

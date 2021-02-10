@@ -2,29 +2,30 @@
    "students":[
       {
          "id":1,
-         "sid":1,
+         "sid":"1545314",
          "fname":"bugs",
          "lname":"bunny",
          "group":"a",
-         "status":"pass"
+         "status":"pass",
+         "flags": [ "EHCP" ]
       },
       {
          "id":2,
-         "sid":2,
+         "sid":"9467423",
          "fname":"daffy",
          "lname":"duck",
          "group":"a",
          "status":"pass"
       },
       {
-         "fname":"Pink",
+        "id":3,
+        "fname":"Pink",
          "lname":"panther",
-         "flags":[
-            "EHCP"
-         ],
-         "id":3,
+         "flags": [ "EHCP" ]
+         ,
          "group":"b",
-         "status":"pass"
+         "status":"pass",
+         "sid": "789456"
       },
       {
          "fname":"Homer",
@@ -34,7 +35,8 @@
          ],
          "id":4,
          "group":"b",
-         "status":"referral"
+         "status":"referral",
+         "sid": "546789"
       },
       {
          "fname":"Freg",
@@ -44,7 +46,8 @@
          ],
          "id":5,
          "group":"c",
-         "status":"referral"
+         "status":"referral",
+         "sid": "912375"
       }
    ],
    "courses":[
