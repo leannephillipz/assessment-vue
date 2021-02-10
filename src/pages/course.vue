@@ -5,7 +5,13 @@
     <!-- <div v-if="error">{{ error }}</div> -->
       <div v-if="course">
 
-      <p>Title: {{ course.title }}</p>
+      <p>Title: Y{{ course.year }} L{{ course.level }} {{ course.title }}</p>
+
+      <div v-for="project in course.projects" :key="project.id" class="project"><!-- this does not output the data -->
+        <p>Project {{ project.number }} : {{ project.title }}</p>
+        <p>{{ project.desc }}</p>
+      </div>
+
 
       </div>
       <div v-else>
@@ -34,3 +40,11 @@ export default {
     }
 
 </script>
+
+<style scoped>
+.project {
+  background-color: #213758;
+      padding: 1em;
+      margin: 1em 0;
+}
+</style>
