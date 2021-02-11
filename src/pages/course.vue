@@ -7,6 +7,8 @@
 
       <h1>{{ course.title }} Y{{ course.year }} L{{ course.lvl }}</h1>
 
+      <students/>
+
       <h2>Projects</h2>
       <div v-for="project in course.projects" :key="project.id" class="project">
         <p>Project {{ project.number }} : {{ project.title }}</p>
@@ -38,9 +40,12 @@
 </template>
 
 <script>
+import students from '../components/students'
+
 export default {
   name: 'course',
   props: ['slug'],
+  components: { students },
     data() {
       return {
         course: []

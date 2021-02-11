@@ -1,6 +1,6 @@
 <template>
 <main>
-<h1>Grader</h1>
+<h1>Grade</h1>
 
 
 
