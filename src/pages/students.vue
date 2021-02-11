@@ -12,6 +12,7 @@
       <li>lname</li>
       <li>Group</li>
       <li>Status</li>
+      <li>Warnings</li>
     </ul>
   <div v-for="student in students" :key="student.id">
     <router-link :to="{name: 'student', params: { slug: student.id }}">
@@ -22,6 +23,7 @@
       <li>{{ student.lname }}</li>
       <li>{{ student.group }}</li>
       <li>{{ student.status }}</li>
+      <li> <span v-if="student.warnings"> W</span></li>
     </ul>
     </router-link>
   </div>

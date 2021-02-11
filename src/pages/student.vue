@@ -9,8 +9,10 @@
     <p>Group: {{ student.group }}</p>
     <p>Status: {{ student.status }}</p>
     <!-- <p>Flags: {{ student.flags }}</p> -->
-    <div v-if="student.flags">
-    <p>Flags: <span v-for="flag in student.flags" :key="flag"> <em>{{ flag }} </em></span> </p>
+    <div >
+    <p v-if="student.flags ">Flags: <span v-for="flag in student.flags" :key="flag"> <em>{{ flag }} </em></span> </p>
+    <p v-if="student.notes">Notes: <span v-for="note in student.notes" :key="note"> <em>{{ note }} </em></span> </p>
+    <p v-if="student.warnings">Warnings: <span v-for="warning in student.warnings" :key="warning"> <em>{{ warning }} </em></span> </p>
   </div>
 
 
@@ -37,6 +39,7 @@ export default {
   setup(props) {
     const { student, error, load } = getStudent(props.slug)
     load()
+    // let studentdata = JSON.stringify(student.value) //can't use lenght on an object but can't change to an array.
     console.log(student)
     return { student, error }
   }
