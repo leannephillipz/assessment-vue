@@ -34,6 +34,7 @@
 <script>
 import { ref } from 'vue'
 import {useRouter} from 'vue-router'
+import { projectFirestore } from '../firebase/config'
 
 export default {
   setup() {
@@ -56,12 +57,14 @@ export default {
       const student = {
         fname: fname.value, lname: lname.value, flags: flags.value
       }
-      await fetch('http://localhost:3000/students', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(student)
-      })
+      // await fetch('http://localhost:3000/students', {
+      //   method: 'POST',
+      //   headers: {'Content-Type': 'application/json'},
+      //   body: JSON.stringify(student)
+      // })
 
+      const res = await projectFirestore.collection('students').add(student)
+console.log(res)
       router.push({name: 'Home'})
     }
 
