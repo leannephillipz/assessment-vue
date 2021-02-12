@@ -8,7 +8,7 @@
          "group":"a",
          "status":"pass",
          "flags": [ "EHCP", "HN" ],
-         "cousecode": "FE123456",
+         "coursecode": "FE123456",
          "notes": [ "Doesn't always understand" ]
       },
       {
@@ -18,7 +18,7 @@
          "lname":"duck",
          "group":"a",
          "status":"pass",
-         "cousecode": "FE123456",
+         "coursecode": "FE123456",
          "notes": [ "Engaging with tutors, correcting mistakes." ]
       },
       {
@@ -29,7 +29,7 @@
          "group":"b",
          "status":"pass",
          "sid": "789456",
-         "cousecode": "FE123456",
+         "coursecode": "FE123456",
          "notes": [ "can't get his wand to work" ]
       },
       {
@@ -49,7 +49,7 @@
          "group":"c",
          "status":"referral",
          "sid": "912375",
-         "cousecode": "FE123456",
+         "coursecode": "FE123456",
          "notes": [ "Hasn't completed any work" ],
          "warnings": ["Stage 1 for non-attendance"]
       }
