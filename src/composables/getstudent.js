@@ -1,4 +1,5 @@
 import { ref } from 'vue'
+import { projectFirestore } from '../firebase/config'
 
 const getstudent = (id) => {
 
@@ -7,12 +8,12 @@ const getstudent = (id) => {
 
   const load = async () => {
     try {
-      let data = await fetch('http://localhost:3000/students/' + id)
-      //json-server pulls the id (not a specified id) might need to look at json-server routing.
-      if (!data.ok) {
-        throw Error('That student does not exist')
+      const res = await projectFirestore.collection("students").doc(id).get()
+      student.value = { ...res.data(), id: res.id}
+
+      if (!res.exists){
+        throw Error('student does not exists')
       }
-      student.value =  await data.json()
     }
     catch(err) {
       error.value = err.message
