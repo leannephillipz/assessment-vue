@@ -14,6 +14,7 @@
       <li>Status</li>
       <li>Warnings</li>
     </ul>
+    
   <div v-for="student in students" :key="student.id">
     <router-link :to="{name: 'student', params: { slug: student.id }}">
     <ul class="flex colx5">
@@ -42,19 +43,17 @@
 
 
 <script>
+import getStudents from '../composables/getstudents'
+
 export default {
-    data() {
-      return {
-        students: []
-      }
-    },
-      mounted(){
-        fetch('http://localhost:3000/students/')
-        .then(response => response.json())
-        .then(data => this.students = data)
-        .catch(err  => console.log(err.messsage))
-        console.log(this.students)
-      }
-    }
+  setup() {
+    const { students, error, load } = getStudents()
+    load()
+
+    return { students, error }
+  }
+}
+
+
 
 </script>
