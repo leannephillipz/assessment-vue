@@ -9,7 +9,7 @@
   <li>Title</li>
 </ul>
 
-<div v-if="courses.length">
+<div v-if="courses">
   <div v-for="course in courses" :key="course.id"><!-- this does not output the data -->
     <router-link :to="{name: 'course', params: { slug: course.id }}">
     <ul class="flex colx3">
@@ -32,14 +32,13 @@
 </template>
 
 <script>
-import getCourses from '@/composables/getCourses'
+import getCollection from '@/composables/getCollection'
 
 export default {
   setup() {
-    const { courses, error, load } = getCourses()
-    load()
-
-    return { courses, error }
+    const { details:courses, error, load } = getCollection('courses')
+    load('courses')
+    return { error, courses }
   }
 }
 

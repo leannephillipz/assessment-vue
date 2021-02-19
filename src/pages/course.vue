@@ -41,26 +41,20 @@
 
 <script>
 // @ is an alias to /src
-import getCourse from '@/composables/getCourse'
-import {useRouter} from 'vue-router'
-import { projectFirestore } from '../firebase/config'
+import getDocument from '@/composables/getDocument'
+// import {useRouter} from 'vue-router'
+// import { projectFirestore } from '../firebase/config'
 
 
 export default {
   name: 'course',
   props: ['slug'],
   setup(props) {
-    const router = useRouter()
-    const { course, error, load } = getCourse(props.slug)
-    load()
-    const handleClick = async () => {
-      await projectFirestore.collection('course')
-      .doc(props.slug)
-      .delete()
-      router.push({name: 'Home'})
-    }
+    // const router = useRouter()
+    const { details:course, error, load  } = getDocument(props.slug)
+    load('courses')
 
-    return { course, error, handleClick }
+    return { course, error }
   }
 
 }
