@@ -1,31 +1,27 @@
 import { ref } from 'vue'
+import { projectFirestore } from '../firebase/config'
 
 const getCourses = () => {
 
-  let courses = ref([])
-  let error = ref(null)
+  const courses = ref([])
+  const error = ref(null)
 
   const load = async () => {
     try {
 
-      //simulate delay
-      // await new Promise(resolve => {
-      //   setTimeout(resolve, 2000)
-      // })
+      const res = await projectFirestore.collection("courses").get()
+      // console.log(res)
+      courses.value = res.docs.map(doc => {
+        console.log(res.docs)
+        return { ...doc.data(), id: doc.id }
+      })
 
-      let data = await fetch('http://localhost:3000/courses')
-      if(!data.ok) {
-        throw Error('no available data')
-      }
-      courses.value = await data.json()
-      console.log(courses.value)
-      // console.log(courses.value) //returns proxy
     }
     catch(err) {
       error.value = err.message
+      console.log(error)
     }
   }
-  // console.log(getCourses, error);
   return { courses, error, load }
 }
 

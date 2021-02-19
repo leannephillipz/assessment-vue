@@ -32,7 +32,7 @@
 
 <script>
 // @ is an alias to /src
-import getStudent from '../composables/getstudent'
+import getStudent from '@/composables/getStudent'
 import {useRouter} from 'vue-router'
 import { projectFirestore } from '../firebase/config'
 

@@ -32,21 +32,16 @@
 </template>
 
 <script>
+import getCourses from '@/composables/getCourses'
 
 export default {
-    data() {
-      return {
-        courses: []
-      }
-    },
-      mounted(){
-        fetch('http://localhost:3000/courses/')
-        .then(response => response.json())
-        .then(data => this.courses = data)
-        .catch(err  => console.log(err.messsage))
-        console.log(this.courses)
-      }
-    }
+  setup() {
+    const { courses, error, load } = getCourses()
+    load()
+
+    return { courses, error }
+  }
+}
 
 
 

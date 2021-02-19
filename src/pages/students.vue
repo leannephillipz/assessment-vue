@@ -14,7 +14,7 @@
       <li>Status</li>
       <li>Warnings</li>
     </ul>
-    
+
   <div v-for="student in students" :key="student.id">
     <router-link :to="{name: 'student', params: { slug: student.id }}">
     <ul class="flex colx5">
@@ -43,7 +43,7 @@
 
 
 <script>
-import getStudents from '../composables/getstudents'
+import getStudents from '@/composables/getStudents'
 
 export default {
   setup() {

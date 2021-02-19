@@ -40,25 +40,31 @@
 </template>
 
 <script>
-import students from '../components/students'
+// @ is an alias to /src
+import getCourse from '@/composables/getCourse'
+import {useRouter} from 'vue-router'
+import { projectFirestore } from '../firebase/config'
+
 
 export default {
   name: 'course',
   props: ['slug'],
-  components: { students },
-    data() {
-      return {
-        course: []
-      }
-    },
-    mounted(){
-      fetch('http://localhost:3000/courses/' + this.slug)
-      .then(response => response.json())
-      .then(data => this.course = data)
-      .catch(err  => console.log(err.messsage))
-      console.log(this.course)
+  setup(props) {
+    const router = useRouter()
+    const { course, error, load } = getCourse(props.slug)
+    load()
+    const handleClick = async () => {
+      await projectFirestore.collection('course')
+      .doc(props.slug)
+      .delete()
+      router.push({name: 'Home'})
     }
-    }
+
+    return { course, error, handleClick }
+  }
+
+}
+
 
 </script>
 

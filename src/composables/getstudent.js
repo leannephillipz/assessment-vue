@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import { projectFirestore } from '../firebase/config'
 
-const getstudent = (id) => {
+const getStudent = (id) => {
 
   const student = ref(null)
   const error = ref(null)
@@ -23,4 +23,4 @@ const getstudent = (id) => {
   return { student, error, load }
 }
 
-export default getstudent
+export default getStudent
