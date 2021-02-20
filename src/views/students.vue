@@ -1,17 +1,17 @@
 <template>
   <div class="items">
     <div v-if="error">{{ error }}</div>
-    <div v-for="student in students" class='item'>
-      <p class="name">{{ student.fname }} {{ student.lname }}</p>
-
-
+    <div v-for="student in students" class='item' :key="student.id">
+      <router-link :to="{ name: 'Student', params: { slug: student.id  }}">
+        <p class="name">{{ student.fname }} {{ student.lname }}</p>
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
 import { ref } from 'vue'
-import getCollection from '../composables/getCollection'
+import getCollection from '@/composables/getCollection'
 
 export default {
   name: 'Students',

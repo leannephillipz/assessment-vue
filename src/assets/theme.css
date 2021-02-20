@@ -263,3 +263,8 @@ input[type="submit"].priority {
 .items .item:not(:first-of-type) h3{
   margin-top:4em;
 }
+
+
+.error {
+  color:#e64848;
+}

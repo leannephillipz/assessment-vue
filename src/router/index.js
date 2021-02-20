@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import Details from '../views/Details.vue'
+import Student from '../views/student.vue'
 import AddTask from '../views/addtask.vue'
 import Tasks from '../views/tasks.vue'
 import Students from '../views/students.vue'
@@ -16,12 +16,6 @@ const routes = [
     component: Home
   },
   {
-    path: '/posts/:id',
-    name: 'Details',
-    component: Details,
-    props: true
-  },
-  {
     path: '/addtask',
     name: 'AddTask',
     component: AddTask
@@ -35,6 +29,12 @@ const routes = [
     path: '/students',
     name: 'Students',
     component: Students
+  },
+  {
+    path: '/student/:slug',
+    name: 'Student',
+    component: Student,
+    props: true
   },
   {
     path: '/addstudent',
