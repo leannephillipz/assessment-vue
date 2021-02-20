@@ -1,5 +1,5 @@
 <template>
-<main>
+
 <h1>Add Student</h1>
       <form @submit.prevent="putdata" class="stacked" >
 
@@ -36,7 +36,6 @@
 
 
 
-</main>
 </template>
 
 

@@ -1,5 +1,5 @@
 <template>
-<main>
+
 <h1>Add Student</h1>
 
       <form @submit.prevent="handleSubmit" class="stacked" >
@@ -26,7 +26,6 @@
       </div>
 
 
-</main>
 </template>
 
 
@@ -34,7 +33,7 @@
 <script>
 import { ref } from 'vue'
 import {useRouter} from 'vue-router'
-import { projectFirestore } from '../firebase/config'
+import { projectFirestore } from '@/firebase/config'
 
 export default {
   setup() {

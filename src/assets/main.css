@@ -1,0 +1,42 @@
+.details{
+  border: solid 1px #ccc;
+  margin-bottom:30px;
+  padding:10px;
+}
+
+.btn {
+  background-color: #ccc;
+}
+
+form {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: left;
+}
+input, textarea {
+  display: block;
+  margin: 10px 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #eee;
+}
+textarea {
+  height: 160px;
+}
+label {
+  display: inline-block;
+  margin-top: 30px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+button {
+  display: block;
+  margin-top: 30px;
+  background: #ff8800;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 18px
+}

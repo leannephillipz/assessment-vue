@@ -1,17 +1,14 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-//gbmc account
 // const firebaseConfig = {
-//   apiKey: "AIzaSyD3f1LcnGB4g8GgRG56ATsgWEXIYmUCahA",
-//   authDomain: "assessment-62e0f.firebaseapp.com",
-//   databaseURL: "https://assessment-62e0f.firebaseio.com",
-//   projectId: "assessment-62e0f",
-//   storageBucket: "assessment-62e0f.appspot.com",
-//   messagingSenderId: "583666337169",
-//   appId: "1:583666337169:web:3d7708dbbbd9112bf20630",
-//   measurementId: "G-Y7VK3H5VC0"
+//   apiKey: "AIzaSyBKB4L3qyD-QHCovEvntQS3HRuOJBVSkno",
+//   authDomain: "udemy-vue-projects.firebaseapp.com",
+//   databaseURL: "https://udemy-vue-projects.firebaseio.com",
+//   projectId: "udemy-vue-projects",
+//   storageBucket: "udemy-vue-projects.appspot.com",
+//   messagingSenderId: "25092947019",
+//   appId: "1:25092947019:web:fdd61cabc8d29add63e1ce"
 // };
 
 const firebaseConfig = {
@@ -25,11 +22,13 @@ const firebaseConfig = {
   measurementId: "G-P8VP1VDB00"
 };
 
-  firebase.initializeApp(firebaseConfig)
 
-  const projectFirestore = firebase.firestore()
-  // console.log("fire");
+// init firebase
+firebase.initializeApp(firebaseConfig)
 
-  export { projectFirestore }
+// init firestore service
+const projectFirestore = firebase.firestore()
+const timestamp = firebase.firestore.FieldValue.serverTimestamp
 
-  // check firebase rules if this doesn't pull data.
+// export firestore
+export { projectFirestore, timestamp }

@@ -1,6 +1,4 @@
-# asessment
-
-Using node package manager.
+# dojo-blog
 
 ## Project setup
 ```
@@ -15,16 +13,6 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Start data server
-```
-npm run data
 ```
 
 ### Customize configuration

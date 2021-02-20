@@ -13,28 +13,17 @@ html {
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
     margin: 0;
-    font-size: 100%;
-    -webkit-font-smoothing: antialiased;
+	padding:0;
 }
 
 
-/*antialiased text */
-* {
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
 
-body{
-        margin: 0;
-        padding: 0;
-        border: 0;
-        outline: 0;
-        vertical-align: baseline;
-        font-size: 16px;
-        line-height: 1.6;
-    }
-
-
+body {
+    margin: 0;
+	padding:0;
+  font-size: 16px;
+  line-height: 1.6;
+}
 
 
 /**
@@ -58,13 +47,11 @@ menu {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
+p, h1, h2, h3, h4, h5, h6 {margin:0; padding:0;}
 
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
 }
-
-
 
 /* Grouping content
    ========================================================================== */
@@ -94,13 +81,20 @@ figure {
  */
 
 hr {
-    -moz-box-sizing: content-box;
   box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
 }
 
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
 
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
 
 /* Text-level semantics
    ========================================================================== */
@@ -115,11 +109,6 @@ a {
   -webkit-text-decoration-skip: objects; /* 2 */
 }
 
-a:active,
-a:hover {
-  outline: 0;
-}
-
 /**
  * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
@@ -131,15 +120,17 @@ abbr[title] {
   text-decoration: underline dotted; /* 2 */
 }
 
-
 /**
- * Prevent the duplicate application of `bolder` by the next rule in Safari 6.. Add the correct font weight in Chrome, Edge, and Safari.
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+   Add the correct font weight in Chrome, Edge, and Safari.
  */
 
 b,
 strong {
+  font-weight: inherit;
   font-weight: bolder;
 }
+
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -148,16 +139,10 @@ strong {
 
 code,
 kbd,
-samp,
-pre{
+samp {
   font-family: monospace, monospace; /* 1 */
   font-size: 1em; /* 2 */
-    margin:0;
-    word-wrap: normal;
 }
-
-
-
 
 /**
  * Add the correct font style in Android 4.3-.
@@ -181,7 +166,7 @@ mark {
  */
 
 small {
-  font-size: 70%;
+  font-size: 80%;
 }
 
 /**
@@ -232,8 +217,7 @@ audio:not([controls]) {
 
 img {
   border-style: none;
-    border: 0;
-    display: inline-block;
+  display:block;
 }
 
 /**
@@ -260,7 +244,8 @@ textarea {
   font-family: sans-serif; /* 1 */
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+      padding: 0;
+    margin: 0;
 }
 
 /**
@@ -323,9 +308,10 @@ button:-moz-focusring,
 input,
 textarea,
 select {
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;
+    webkit-appearance: none; /** fixed padding but removed arrows **/
     outline: none;
 }
 
@@ -337,7 +323,20 @@ input[type="password"] {
 input[type="checkbox"],
 input[type="radio"] {
     width: auto;
+    display:block;
 }
+
+input[type="checkbox"]{
+		-webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    appearance: checkbox;
+	}
+
+  input[type="radio"]{
+  		-webkit-appearance: radio;
+      -moz-appearance: radio;
+      appearance: radio;
+  	}
 
 /**
  * Correct the padding in Firefox.
@@ -483,22 +482,10 @@ template {
 
 
 
-/* Self Clearing Goodness - clear floats */
+/* Self Clearing Goodness */
 
-.clearfix {
-    overflow: auto;
-}
-
-.clearfix:before,
 .clearfix:after{
     content: "";
     display: table;
     clear: both;
-}
-
-
-::selection,
-::-moz-selection {
-  text-shadow: none;
-  background: rgba(65,131,196,0.4);
 }

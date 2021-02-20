@@ -1,17 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router' // <---
+import router from './router'
 
-createApp(App)
-.use(router)
-.mount('#app');
+import './assets/normalise.css'
+import './assets/base.css'
+import './assets/flex.css'
+import './assets/theme.css'
 
-// const app = Vue.createApp({
-//     data() {
-//         return {
-//             user: 'user'
-//         }
-//     }
-// });
-
-// app.use(router).mount('#app');
+createApp(App).use(router).mount('#app')

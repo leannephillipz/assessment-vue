@@ -3,18 +3,16 @@ import { projectFirestore } from '../firebase/config'
 
 const getCollection = () => {
 
-  const details = ref([])
+  const content = ref([])
   const error = ref(null)
 
   const load = async (collection) => {
     try {
-      const res = await projectFirestore.collection(collection)
-      // .orderBy('created', 'desc')
-      .get()
+      const res = await projectFirestore.collection(collection).get()
       // console.log(res.docs)
 
-      details.value = res.docs.map(doc => {
-        // console.log(doc.data())
+      content.value = res.docs.map(doc => {
+        console.log(doc.data())
         return { ...doc.data(), id: doc.id }
       })
     }
@@ -23,7 +21,7 @@ const getCollection = () => {
     }
   }
 
-  return { details, error, load }
+  return { content, error, load }
 }
 
 export default getCollection
