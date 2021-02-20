@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Details from '../views/Details.vue'
-import Create from '../views/Create.vue'
+import AddTask from '../views/addtask.vue'
 import Tasks from '../views/tasks.vue'
 import Students from '../views/students.vue'
 import AddStudent from '../views/addstudent.vue'
@@ -22,9 +22,9 @@ const routes = [
     props: true
   },
   {
-    path: '/create',
-    name: 'Create',
-    component: Create
+    path: '/addtask',
+    name: 'AddTask',
+    component: AddTask
   },
   {
     path: '/tasks',

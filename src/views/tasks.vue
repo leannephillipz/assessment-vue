@@ -6,7 +6,7 @@
       <p>{{ task.desc }}</p>
 
       <div v-for="items in task.items" :key="items.title" class="details">
-        {{ items.title}}
+        {{ items.title }} : {{ items.text }} 
       </div>
 
 

@@ -1,6 +1,6 @@
 <template>
 
-<h1>Add Student</h1>
+<h3>Add Student</h3>
 
       <form @submit.prevent="handleSubmit" class="stacked" >
 

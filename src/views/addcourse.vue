@@ -1,6 +1,7 @@
 <template>
 
-<h1>Add Student</h1>
+<h3>Add Course</h3>
+<p>not set up yet</p>
       <form @submit.prevent="putdata" class="stacked" >
 
         <fieldset>

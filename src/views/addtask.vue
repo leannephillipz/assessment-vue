@@ -1,6 +1,6 @@
 <template>
   <div class="create">
-    <p>Create new</p>
+    <h3>Create new Task</h3>
     <form @submit.prevent="handleSubmit">
       <label>Title:</label>
       <input v-model="title" type="text" required>
@@ -20,12 +20,14 @@
 
 
       <div class="details">
-
-
         <p>Tasks</p>
         <label>Item</label>
         <input v-model="item.title" type="text" placeholder="title">
         <input v-model="item.text" type="text" placeholder="text">
+        <input v-model="item.refer" type="text" placeholder="Referral Text">
+        <input v-model="item.pass" type="text" placeholder="Pass Text">
+        <input v-model="item.pass" type="good" placeholder="Good text">
+        <input v-model="item.pass" type="excellent" placeholder="Excellent text">
         <!-- <input v-model="item.text" type="text" @keydown.enter.prevent="handleKeydown"> -->
         <span @click="handleClick" class="btn">Add this item</span>
       </div>

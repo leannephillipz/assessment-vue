@@ -5,7 +5,7 @@
       <router-link :to="{ name: 'Students' }">Students</router-link>
       <router-link :to="{ name: 'Courses' }">Courses</router-link>
       <hr>
-      <router-link :to="{ name: 'Create' }">Create Task</router-link>
+      <router-link :to="{ name: 'AddTask' }">Create Task</router-link>
       <router-link :to="{ name: 'AddCourse' }">Create Course</router-link>
       <router-link :to="{ name: 'AddStudent' }">Create Student</router-link>
 
