@@ -10,7 +10,7 @@
     <p>Code: {{ course.code }}</p>
     <p>Awarding Body: {{ course.awardbody }}</p>
 
-    <students :students="{'data': 'test'}"/>
+    <students :students="data"/>
   </div>
 </template>
 
@@ -25,10 +25,18 @@ export default {
   components: {students},
   setup(props) {
     // console.log(props.slug)
+    const data = {
+      "1": {
+        "name": "bugs"
+      },
+      "2": {
+        "name": "Daffy"
+      }
+    }
     const { content:course, error, load } = getDocument()
     load('courses', props.code, 'code')
     // console.log(course.value)
-    return { course, error, students }
+    return { course, error, students, data }
   },
 }
 </script>
