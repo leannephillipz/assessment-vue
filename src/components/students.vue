@@ -1,8 +1,8 @@
 <template>
   <div class="details">
   <h3>Students</h3>
-
-<!-- <p>Course Code to retreive students: {{ code }}</p> -->
+<p>This isn't working correctly - I don't get the firebase index message in the console.</p>
+<p>Course Code to retreive students: {{ code }}</p>
 
 <div v-for="student in students">
 <p class="name">{{student.fname}} {{student.lname}}</p>
@@ -26,7 +26,7 @@ export default {
 
      const load = async (check) => {
        try {
-         const query = await projectFirestore.collection('students').where("coursecode", "==", "FEL3Y1GD2020").get()
+         const query = await projectFirestore.collection('students').where("coursecode", "==", props.code).get()
          students.value = query.docs.map(doc => {
            console.log(doc.data())
            return { ...doc.data(), id: doc.id }
