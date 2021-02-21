@@ -2,7 +2,7 @@
 
 <h3>Add Course</h3>
 <p>not set up yet</p>
-      <form @submit.prevent="putdata" class="stacked" >
+      <form @submit.prevent="handleSubmit" class="stacked" >
 
         <fieldset>
           <label for="year">Year</label>
@@ -23,7 +23,7 @@
           <input v-model="code" type="text" name="code">
 
 
-<p>Data: {{ course }}</p>
+<!-- <p>Data: {{ course }}</p> -->
 
 
           <!-- <label for="name">Student ID</label>
@@ -45,66 +45,51 @@
 
 
 <script>
-// import {useRouter} from 'vue-router'
+import { ref } from 'vue'
+import {useRouter} from 'vue-router'
+import { projectFirestore } from '@/firebase/config'
 
 export default {
-
-  // setup() {
-  //   const lvl = ref('')
-  //   const year = ref('')
-  //   const title = ref('')
-  //   const abody = ref([])
-  //   const qual = ref([])
-  //   const subject = ref([])
-  //   const qtitle = ref([])
-  //
-  // }
-
-
-    data() {
-      return {
-        lvl: "",
-        year: "",
-        title: "Games Development",
-        awardbody: "University of the Arts London (UAL)",
-        qual: "Diploma",
-        subject: "Games Development",
-        qtitle: "Creative Media Production and Technology Games Development",
-        code: "",
-        course: "",
-        feedback: ""
-    }
-  },
-
-    methods: {
-      putdata() {
-        this.course = {"lvl": this.lvl, "year": this.year, "title": this.title, "awardbody": this.awardbody, "qual": this.qual, "subject": this.subject, "qtitle": this.qtitle, "code": this.code}
-
-        // console.log(this.course);
-        // const router = useRouter()
-        const data = this.course
-
-        async function thedata(data) {
-          try {
-            await fetch(' http://localhost:3000/courses', {
-              method: 'POST',
-              headers: {'Content-Type': 'application/json'},
-              body: JSON.stringify(data)
-            })
-            // useRouter().push({name: 'Home'})
-          } catch(err) {
-            console.log(err); // TypeError: failed to fetch
-          }
-        }
-
-        thedata(data);
+  setup() {
+    const year = ref('')
+    const lvl = ref('')
+    const awardbody = ref('')
+    const qual = ref('')
+    const subject = ref('')
+    const title = ref('')
+    const qtitle = ref('')
+    const code = ref('FEL3Y1GD2020')
 
 
 
+    const router = useRouter()
 
+
+    const handleSubmit = async () => {
+      const data = {
+        year: year.value,
+        lvl: lvl.value,
+        awardbody: awardbody.value,
+        qual: qual.value,
+        subject: subject.value,
+        title: title.value,
+        qtitle: qtitle.value,
+        code: code.value
       }
-}
+      // await fetch('http://localhost:3000/students', {
+      //   method: 'POST',
+      //   headers: {'Content-Type': 'application/json'},
+      //   body: JSON.stringify(student)
+      // })
 
+      const res = await projectFirestore.collection('courses').add(data)
+      // console.log(res)
+      router.push({name: 'Home'})
+    }
+
+
+    return {year, lvl, awardbody, qual, subject, title, qtitle, code, handleSubmit}
+  }
 }
 
 
