@@ -1,5 +1,5 @@
 <template>
-<p>not set yet</p>
+<p>Not set yet, need to implement auth</p>
 </template>
 
 <script>
