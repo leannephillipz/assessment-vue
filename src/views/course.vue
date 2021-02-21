@@ -9,22 +9,26 @@
     <p>Year: {{ course.year }}</p>
     <p>Code: {{ course.code }}</p>
     <p>Awarding Body: {{ course.awardbody }}</p>
+
+    <students :students="{'data': 'test'}"/>
   </div>
 </template>
 
 <script>
 // import { ref } from 'vue'
 import getDocument from '@/composables/getDocument'
+import students from '@/components/students'
 
 export default {
   name: 'Course',
   props: ['code'],
+  components: {students},
   setup(props) {
     // console.log(props.slug)
     const { content:course, error, load } = getDocument()
     load('courses', props.code, 'code')
     // console.log(course.value)
-    return { course, error }
+    return { course, error, students }
   },
 }
 </script>
