@@ -2,7 +2,7 @@
 node_modules
 /dist
 _bak
-.firebase/hosting
+.firebase
 
 
 # local env files
