@@ -1,12 +1,14 @@
 <template>
   <div class="items">
-    <div v-if="error">{{ error }}</div>
-    <div v-for="course in courses" class='item'>
-      <p class="name">{{ course.lvl }} {{ course.year }} {{ course.title }}</p>
+      <div v-if="error">{{ error }}</div>
+      <div v-for="course in courses" class='item' :key="course.id">
 
-
-    </div>
+        <router-link :to="{ name: 'Course', params: { code: course.code  }}">
+        <p class="name">{{ course.title }} - Level {{ course.lvl }} - year {{ course.year }}</p>
+        </router-link>
+      </div>
   </div>
+
 </template>
 
 <script>

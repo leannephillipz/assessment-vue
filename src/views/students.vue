@@ -3,7 +3,7 @@
     <div v-if="error">{{ error }}</div>
     <div v-for="student in students" class='item' :key="student.id">
       <router-link :to="{ name: 'Student', params: { slug: student.id  }}">
-        <p class="name">{{ student.fname }} {{ student.lname }}</p>
+        <p class="name">{{ student.fname }} {{ student.lname }} - Group: {{ student.group }} - Status: {{ student.status }}</p>
       </router-link>
     </div>
   </div>

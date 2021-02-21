@@ -15,7 +15,7 @@ export default {
   name: 'Student',
   props: ['slug'],
   setup(props) {
-    console.log(props.slug)
+    // console.log(props.slug)
     const { content:student, error, load } = getDocument()
     load('students', props.slug)
 
