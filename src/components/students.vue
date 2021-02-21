@@ -1,25 +1,46 @@
 <template>
   <div class="details">
-  <p>Students Will go here</p>
+  <h3>Students</h3>
 
-<div v-for="student in students" :key="student.name">
-  <p class="name">
-  {{student.name}}
-</p>
+<!-- <p>Course Code to retreive students: {{ code }}</p> -->
 
+<div v-for="student in students">
+<p class="name">{{student.fname}} {{student.lname}}</p>
 </div>
 
-  <div>
+  </div>
 
-  </div>
-  </div>
 </template>
 
 <script>
-export default {
-   props: ['students'],
-   setup(props) {
+import { ref } from 'vue'
+import { projectFirestore } from '@/firebase/config'
 
+export default {
+   props: ['code'],
+   setup(props) {
+     // return students who's course code = code
+
+     const students = ref([])
+     const error = ref(null)
+
+     const load = async (check) => {
+       try {
+         const query = await projectFirestore.collection('students').where("coursecode", "==", "FEL3Y1GD2020").get()
+         students.value = query.docs.map(doc => {
+           console.log(doc.data())
+           return { ...doc.data(), id: doc.id }
+         })
+       }
+       catch(err) {
+         error.value = err.message
+       }
+     }
+
+     load(props.code)
+
+
+     return {students, error}
    }
 }
 </script>
