@@ -2,12 +2,14 @@
   <p>Login / Register</p>
     <div v-if="!registered">
       <Login />
+      <p @click="registered = !registered">Not Registered? Signup</p>
     </div>
     <div v-if="registered">
     <Signup />
+    <p @click="registered = !registered">Already Registered? Login</p>
   </div>
 
-<p @click="toggle">Toggle</p>
+
 
 
 </template>
@@ -23,17 +25,17 @@ export default {
     const registered = ref(false)
 
 
-    const toggle = () => {
-      // registered = registered != true;
-      registered = true;
-       // registered ? true : false
-
-      // if ( registered = true ) {
-      //   registered = false
-      // } else {
-      //   registered = true
-      // }
-    }
+    // const toggle = () => {
+    //   // registered = registered != true;
+    //   registered = true;
+    //    // registered ? true : false
+    //
+    //   // if ( registered = true ) {
+    //   //   registered = false
+    //   // } else {
+    //   //   registered = true
+    //   // }
+    // }
     return {registered}
 
 
