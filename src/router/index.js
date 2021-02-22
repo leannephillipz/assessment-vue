@@ -9,6 +9,7 @@ import Courses from '../views/courses.vue'
 import Course from '../views/course.vue'
 import AddCourse from '../views/addcourse.vue'
 import CourseStudents from '../views/courseStudents.vue'
+import Login from '../views/login.vue'
 
 
 const routes = [
@@ -16,6 +17,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
   },
   {
     path: '/addtask',
