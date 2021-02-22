@@ -2,7 +2,6 @@
   <div class="items">
     <div v-if="error" class="error">{{ error }}</div>
     <!-- <p>Student {{ $route.params.slug }} {{ props.slug }}</p> -->
-    <p>doesn't work as a component</p>
   <p>Matching Students</p>
   <div v-for="student in students">
     {{student.fname}}
@@ -16,7 +15,7 @@ import getmatch from '@/composables/crossreference'
 
 export default {
   name: 'CourseStudents',
-  props: ['coursecode'],
+  props: ['code'],
   setup(props) {
 
     const { documents:students, error, load } = getmatch('students', props.code, 'coursecode')

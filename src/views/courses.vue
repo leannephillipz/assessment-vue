@@ -21,7 +21,7 @@ export default {
   setup() {
     const { content:courses, error, load } = getCollection()
 
-    load('courses')
+     load('courses')
 
     return { courses, error }
   },

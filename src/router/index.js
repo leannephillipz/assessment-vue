@@ -8,6 +8,7 @@ import AddStudent from '../views/addstudent.vue'
 import Courses from '../views/courses.vue'
 import Course from '../views/course.vue'
 import AddCourse from '../views/addcourse.vue'
+import CourseStudents from '../views/courseStudents.vue'
 
 
 const routes = [
@@ -51,6 +52,12 @@ const routes = [
     path: '/course/:code',
     name: 'Course',
     component: Course,
+    props: true
+  },
+  {
+    path: '/course/students/:code',
+    name: 'CourseStudents',
+    component: CourseStudents,
     props: true
   },
   {
