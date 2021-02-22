@@ -1,0 +1,49 @@
+{
+  "courses": [
+    {
+      "0": {
+          "0": {
+          "title": "Potion Arts",
+          "awardbody": "University of Magic London (UML)",
+          "code": "FEL3Y1GD2020",
+          "lvl": 3,
+          "subject": "magic",
+          "year": 1,
+          "qual": "Diploma",
+          "qtitle": "UML Level 3 Diploma in Creative Magic Arts"
+          }
+        }
+    },
+    {
+      "1": {
+          "1": {
+          "title": "Potion Arts",
+          "awardbody": "University of Magic London (UML)",
+          "code": "FEL3Y2GD2020",
+          "lvl": 3,
+          "subject": "magic",
+          "year": 2,
+          "qual": "Diploma",
+          "qtitle": "UML Level 3 Diploma in Creative Magic Arts"
+          }
+        }
+
+    },
+    {
+      "1": {
+          "1": {
+          "title": "Potion Arts",
+          "awardbody": "University of Magic London (UML)",
+          "code": "FEL2Y1GD2020",
+          "lvl": 2,
+          "subject": "magic",
+          "year": 1,
+          "qual": "Diploma",
+          "qtitle": "UML Level 2 Diploma in Creative Magic Arts"
+          }
+        }
+
+    }
+
+  ]
+}
