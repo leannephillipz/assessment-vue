@@ -1,9 +1,10 @@
 <template>
   <div class="items">
     <div v-if="error" class="error">{{ error }}</div>
+
     <!-- <p>Student {{ $route.params.slug }} {{ props.slug }}</p> -->
     <h1>{{ student.fname }} {{ student.lname }}</h1>
-
+<p class="note">In Dev - need to pull and cross reference data</p>
     <ul class="student grid">
       <li>
         <ul class="flex header">

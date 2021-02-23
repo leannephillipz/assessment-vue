@@ -61,16 +61,4 @@ button {
   float:right;
 }
 
-.fullpage {
-      width: calc(100% - 250px);
-      height: 80%;
-      position: absolute;
-      display: flex;
-      z-index: 2;
-      align-items: center;
-      justify-content: center;
-}
-.fullpage > div {
-  margin:auto;
-}
 </style>
