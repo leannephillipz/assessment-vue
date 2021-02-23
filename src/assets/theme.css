@@ -304,13 +304,14 @@ input[type="submit"].priority {
 
 
 .fullpage {
-      width: calc(100% - 250px);
-      height: 80%;
-      position: absolute;
-      display: flex;
-      z-index: 2;
-      align-items: center;
-      justify-content: center;
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  display: flex;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+  left: 0;
 }
 .fullpage > div {
   margin:auto;
