@@ -9,14 +9,29 @@ import Courses from '../views/courses.vue'
 import Course from '../views/course.vue'
 import AddCourse from '../views/addcourse.vue'
 import CourseStudents from '../views/courseStudents.vue'
-import Login from '../views/login.vue'
+import Login from '../views/auth/login.vue'
+import Signup from '@/views/auth/signup.vue'
+
+//route guards
+
+import { projectAuth } from '@/firebase/config'
+const requireAuth =  (to, from, next) => {
+  // we need to wait for firebase to get connection or it will redirect on refresh so we set up the app in main.js
+  let user = projectAuth.currentUser
+  if (!user) {
+    next({ name: 'Login'})
+  } else {
+    next()
+  }
+}
 
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    beforeEnter: requireAuth
   },
   {
     path: '/login',
@@ -24,52 +39,66 @@ const routes = [
     component: Login
   },
   {
+    path: '/signup',
+    name: 'Signup',
+    component: Signup
+  },
+  {
     path: '/addtask',
     name: 'AddTask',
-    component: AddTask
+    component: AddTask,
+    beforeEnter: requireAuth
   },
   {
     path: '/tasks',
     name: 'Tasks',
-    component: Tasks
+    component: Tasks,
+    beforeEnter: requireAuth
   },
   {
     path: '/students',
     name: 'Students',
-    component: Students
+    component: Students,
+    beforeEnter: requireAuth
   },
   {
     path: '/student/:slug',
     name: 'Student',
     component: Student,
-    props: true
+    props: true,
+    beforeEnter: requireAuth
   },
   {
     path: '/addstudent',
     name: 'AddStudent',
-    component: AddStudent
+    component: AddStudent,
+    beforeEnter: requireAuth
   },
   {
     path: '/courses',
     name: 'Courses',
-    component: Courses
+    component: Courses,
+    beforeEnter: requireAuth
   },
   {
     path: '/course/:code',
     name: 'Course',
     component: Course,
-    props: true
+    props: true,
+    beforeEnter: requireAuth
   },
   {
     path: '/course/students/:code',
     name: 'CourseStudents',
     component: CourseStudents,
-    props: true
+    props: true,
+    beforeEnter: requireAuth
   },
   {
     path: '/addcourse',
     name: 'AddCourse',
-    component: AddCourse
+    component: AddCourse,
+    beforeEnter: requireAuth
   }
 ]
 

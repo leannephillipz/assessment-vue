@@ -103,6 +103,7 @@ input[type="button"] {
     background: #00ce89;
     outline: 0;
     border: 0;
+    margin: 0.3em;
 }
 
 .btn:hover,
@@ -143,7 +144,7 @@ select {
     background-color: #fff;
     box-shadow: none;
     box-sizing: border-box;
-    border: 2px solid #c0c1b3;
+    /* border: 2px solid #c0c1b3; */
     border-radius: 4px;
 	   -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -161,7 +162,7 @@ select {
 
 input, textarea, select {
 	margin-bottom: 1em;
-	border: 2px solid #c0c1b3;
+	/* border: 2px solid #c0c1b3; */
 	}
 
 
@@ -173,12 +174,6 @@ textarea {
     min-height: 65px;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
-    border: 2px solid #000;
-    outline:none;
-}
 
 
 fieldset {

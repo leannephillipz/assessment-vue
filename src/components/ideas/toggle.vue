@@ -1,23 +1,17 @@
 <template>
   <p>Login / Register</p>
     <div v-if="!registered">
-      <Login />
-      <p @click="registered = !registered">Not Registered? Signup</p>
+      <p @click="registered = !registered">Signup</p>
     </div>
     <div v-if="registered">
-    <Signup />
-    <p @click="registered = !registered">Already Registered? Login</p>
+      <p @click="registered = !registered">Login</p>
+
   </div>
-
-
-
 
 </template>
 
 <script>
 import { ref } from 'vue'
-import Login from '@/components/auth/login'
-import Signup from '@/components/auth/signup'
 
 export default {
   components: {Login, Signup},

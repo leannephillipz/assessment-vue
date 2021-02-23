@@ -119,6 +119,7 @@ h5, h6 {
 a {color:#3a94e0;text-decoration:none;}
 
 a:hover {
+  text-decoration:underline;
 }
 
 
@@ -128,7 +129,7 @@ a:hover {
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-form {overflow: auto;}
+/* form {overflow: auto;} */
 input, textarea, select, button { color: #666; }
 
 label {
@@ -149,7 +150,7 @@ select {
     border-radius: 2px;
     border:0;
     box-sizing: border-box;
-  	/* border: 1px solid #e5e5e5; */
+  	border: 2px solid #fff;
   	vertical-align: middle;
   	padding: 0.9em 0.8em;
     display: block;
@@ -158,12 +159,18 @@ select {
     -moz-transition: all 0.5s ease 0s;
 }
 
+input:focus,
+textarea:focus,
+select:focus {
+    border: 2px solid #00ce89;
+    outline:none;
+}
 
 
 input:hover,
 textarea:hover,
 select:hover {
-    /* border: 1px solid #555; */
+    border: 2px solid #fff;
 }
 
 

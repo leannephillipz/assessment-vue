@@ -1,8 +1,8 @@
 <template>
-<p>Not set yet, need to implement auth</p>
+<p>Not set yet</p>
+<p> &#60; &#60; check out the nav</p>
 
-<div v-if="$plugin.data">true</div>
-<div v-if="!$plugin.data">false</div>
+
 </template>
 
 <script>

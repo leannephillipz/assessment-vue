@@ -1,4 +1,5 @@
 <template>
+  <div v-if="user">
     <nav>
       <router-link :to="{ name: 'Home' }">Home</router-link>
       <router-link :to="{ name: 'Tasks' }">Tasks</router-link>
@@ -10,11 +11,16 @@
       <router-link :to="{ name: 'AddStudent' }">Create Student</router-link>
 
     </nav>
+    </div>
 </template>
 
 <script>
+import getUser from '@/composables/getUser'
 export default {
-
+setup() {
+  const { user } = getUser()
+  return { user }
+}
 }
 </script>
 
