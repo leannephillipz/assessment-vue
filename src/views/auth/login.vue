@@ -56,6 +56,4 @@ button {
   float:right;
 }
 
-in:auto;
-}
 </style>
