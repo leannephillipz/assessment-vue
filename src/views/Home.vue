@@ -1,5 +1,5 @@
 <template>
-<p>Not set yet</p>
+<h1>Not set yet</h1>
 <p> &#60; &#60; check out the nav</p>
 
 

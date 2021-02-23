@@ -1,8 +1,9 @@
 <template>
   <div class="items">
+    <h1>Matching Students</h1>
     <div v-if="error" class="error">{{ error }}</div>
     <!-- <p>Student {{ $route.params.slug }} {{ props.slug }}</p> -->
-  <p>Matching Students</p>
+
   <div v-for="student in students">
     {{student.fname}}
   </div>

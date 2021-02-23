@@ -1,8 +1,8 @@
 <template>
   <div class="items">
+    <h1>Course</h1>
     <div v-if="error" class="error">{{ error }}</div>
     <!-- <p>Student {{ $route.params.slug }} {{ props.slug }}</p> -->
-    <p>Course</p>
     <p class="name">{{ course.title }}</p>
     <p>Code: {{ course.code }}</p>
     <p>Industry / Subject: {{ course.subject }}</p>

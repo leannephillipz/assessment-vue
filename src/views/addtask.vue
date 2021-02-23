@@ -1,6 +1,6 @@
 <template>
   <div class="create">
-    <h3>Create new Task</h3>
+    <h1>Create new Task</h1>
     <form @submit.prevent="handleSubmit">
       <label>Title:</label>
       <input v-model="title" type="text" required>

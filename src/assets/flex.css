@@ -9,12 +9,12 @@
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
 }
 
-.flex > * { box-sizing: border-box; flex: 1 0 45%;}
+.flex > * { box-sizing: border-box;}
 
 .flex.colx2 > * {
     flex: 1 0 45%;

@@ -1,7 +1,8 @@
 <template>
   <div class="items">
+    <h1>Tasks</h1>
     <div v-if="error">{{ error }}</div>
-    <p class="note"> will add task numbers in seperatly so that we can reorganise them</p>
+    <p class="note">Note: will add task numbers in seperatly so that we can reorganise them</p>
     <div v-for="task in tasks" class='item' :key="task.title">
       <h3>{{ task.title }}:</h3>
       <p>{{ task.desc }}</p>

@@ -1,5 +1,6 @@
 <template>
-  <div class="items">
+  <div class="">
+    <h1>Courses</h1>
       <div v-if="error">{{ error }}</div>
       <div v-for="course in courses" class='item' :key="course.id">
 

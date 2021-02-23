@@ -249,17 +249,59 @@ input[type="submit"].priority {
 
 
 .details {
-  border:solid 1px #ccc;
-  padding:20px;
-  margin-bottom: 20px;
+  background-color:#25292f;
+  padding:.5em;
+  margin-bottom: .5em;
 }
 
 
-.items .item:not(:first-of-type) h3{
+.items .item:not(:first-of-type) {
   margin-top:4em;
 }
-
+/* .items .item:not(:first-of-type) h3{
+  margin-top:4em;
+} */
+.items .item {
+  background:#37474a;
+  padding:1em;
+}
 
 .error {
   color:#e64848;
 }
+
+.note {
+  color: #d4e648;
+}
+
+
+
+.grid .header {
+  border-bottom: 1px solid #c1c1c1;
+    border-top: 1px solid #c1c1c1;
+    margin: .5em 0;
+}
+.grid .flex{
+  padding: 1em 0;
+}
+
+.grid .flex > li{
+  flex: 1 1 50px;
+  text-transform: capitalize;
+}
+
+.student.grid .flex > li:first-of-type{
+  flex: 0 1 70px;
+}
+.students.grid .flex > li:first-of-type{
+  flex: 0 1 20px;
+}
+.students.grid .flex > li:last-of-type{
+  margin-left:auto;
+  flex: 1 0 200px;
+}
+
+
+/* .student.grid .flex > li:first-of-type{
+  flex: 0 1 50px;
+} */
