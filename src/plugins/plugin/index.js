@@ -14,8 +14,16 @@ const install = (app, options) => {
     beforeMount(el, binding, vnode) {
       el.style.background = binding.value
     }
-    // to use globally : <p v-highlight="'yellow'">xxx</p> this actually works
+    // to use in compondent : <p v-highlight="'yellow'">xxx</p> this actually works
     })
+
+    // add(text, opts = {}) {
+    //   let options = this.mergeOptions(opts);
+    //   this.queue.push({ text, options });
+    //   if(!this.visible) {
+    //     this.showNext();
+    //   }
+    // },
 
 
 }
