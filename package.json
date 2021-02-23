@@ -11,6 +11,7 @@
     "core-js": "^3.6.5",
     "firebase": "^8.0.1",
     "vue": "^3.0.0-0",
+    "vue-notibar": "^0.3.2",
     "vue-router": "^4.0.0-0"
   },
   "devDependencies": {

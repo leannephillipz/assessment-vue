@@ -1,17 +1,28 @@
 // const VPlugin = {}
 
-// const getData = () => {
-//   return [{'Name': 'bugs'}]
-// }
+const getData = () => {
+  return [{'Name': 'bugs'}]
+}
 
-const install = () => {
-  app.config.globalProperties.$plugin = "hello"
-  app.$plugin = this
+const install = (app, options) => {
+  app.config.globalProperties.$plugin = getData()
+  // app.$plugin = this
+  app.provide('vPlugin', options)
+  console.log(app.config.globalProperties)
+
+  app.directive('highlight', {
+    beforeMount(el, binding, vnode) {
+      el.style.background = binding.value
+    }
+    // to use globally : <p v-highlight="'yellow'">xxx</p> this actually works
+    })
+
+
 }
 
 const data = false
 
-export default {install, data}
+export default {install}
 
 // export default {
 //
