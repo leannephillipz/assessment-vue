@@ -1,58 +1,55 @@
 main {
   padding:3em;
-  margin-left: 180px;
+  margin-left: 1em;
+
 }
 
 nav {
-  /* position: -webkit-sticky;
-  /* required for Safari */
-/* position: sticky;
-top: 0; */
-    width: 180px;
-    height: 100vh;
-
+    width:0;
+    margin:0;
+    padding:0;
     position:fixed;
-    padding: 2em;
-    /* background: #333; */
     background-color: #151a1b;
+    height: 100vh;
 }
 
-  nav ul {
+nav ul {
     margin-top: 3rem;
     /* text-align: right; */
-  }
+}
 
-  nav a {color:rgba(255,255,255,0.8);}
+nav a {color:rgba(255,255,255,0.8);}
 
+nav .links {display:none; }
+nav {transition: 0.3s;}
 
-  nav, {transition: 0.3s;}
+nav a {white-space: nowrap; overflow:hidden;}
 
-  nav .icon {
+nav .icon {
+    left: 0;
     position: absolute;
     top: 3em;
-    left: 180px;
-  }
+}
 
-  nav .icon img {
+nav .icon img {
     color:#4CAF50;
     background-color:#4CAF50;
   }
 
 
 .navtoggle {
-    width:0;
-    margin:0;
-    padding:0;
+  width: 180px;
+  padding: 2em;
   }
 .navtoggle .links{
-     display:none;
+     display:block;
    }
 .navtoggle .icon{
-     left: 0;
+    left: 180px;
 }
 
 .navtoggle + main {
-  margin-left: 1em;
+  margin-left: 180px;
 }
 
   /* @media (max-width: 1000px) {
