@@ -1,9 +1,7 @@
 <template>
-  <div class="">
+
     <h1>Students</h1>
     <div v-if="error">{{ error }}</div>
-
-
 
       <ul class="students grid">
         <li>
@@ -39,7 +37,7 @@
         <p class="name">{{ student.fname }} {{ student.lname }} - Group: {{ student.group }} <span v-if="student.status">- Status: {{ student.status }}</span></p>
 
     </div> -->
-  </div>
+
 </template>
 
 <script>

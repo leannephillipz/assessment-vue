@@ -1,7 +1,8 @@
 main {
   padding:3em;
-  margin-left: 1em;
-
+  /* margin-left: 1em; */
+  margin: auto;
+  width: 60vw;
 }
 
 nav {
@@ -29,6 +30,7 @@ nav .icon {
     left: 0;
     position: absolute;
     top: 3em;
+    transition: 0.3s;
 }
 
 nav .icon img {
@@ -49,7 +51,8 @@ nav .icon img {
 }
 
 .navtoggle + main {
-  margin-left: 180px;
+  /* margin-left: 180px; */
+  /* if you need to slide the main with the nav */
 }
 
   /* @media (max-width: 1000px) {
