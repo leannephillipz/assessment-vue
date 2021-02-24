@@ -11,6 +11,7 @@ import AddCourse from '../views/addcourse.vue'
 import CourseStudents from '../views/courseStudents.vue'
 import Login from '../views/auth/login.vue'
 import Signup from '@/views/auth/signup.vue'
+import Profile from '@/views/profile.vue'
 
 //route guards
 
@@ -42,6 +43,11 @@ const routes = [
     path: '/signup',
     name: 'Signup',
     component: Signup
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile
   },
   {
     path: '/addtask',

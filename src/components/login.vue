@@ -4,7 +4,7 @@
     <div>
       <!-- <img src="@/assets/ninja.png"> -->
         <div v-if="user">
-          <span class="user">{{ user.displayName }}</span>
+          <router-link :to="{name: 'Profile'}" class="user">{{ user.displayName }}</router-link>
           <button @click="handleClick">Logout</button>
         </div>
         <div v-else>
