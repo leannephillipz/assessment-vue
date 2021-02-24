@@ -55,45 +55,13 @@ nav .icon img {
   /* if you need to slide the main with the nav */
 }
 
-  /* @media (max-width: 1000px) {
-
-    nav {
-        position:fixed;
-        width: auto;
-        min-width: auto;
-        background:rgba(50,50,50,1);
-    }
-
-    nav ul {
-      margin-top: 0;
-      text-align: left;
-    }
-  } */
-
-  /* main {
-  	margin-left:240px;
-    box-sizing: border-box;
-    padding-top: 3em;
-  } */
-
-  /* @media (max-width: 1000px) {
-    main {
-    	margin-left:0;
-    }
-  } */
-
-  /* @media screen and (min-width: 1470px){
-  main {
-    max-width:70%;
-  }
-  } */
 
 
 
 
-  .name {
+  /* .name {
     text-transform: capitalize;
-  }
+  } */
 
 
 
@@ -131,7 +99,7 @@ input[type="button"] {
     -o-transition: 0.5s;
     transition: 0.5s;
 	/*background-color: transparent;*/
-    background: #4CAF50;
+background: #4CAF50;
     outline: 0;
     border: 0;
     margin: 0.3em;
@@ -143,15 +111,24 @@ input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover{
     color: #eee;
-    background: #242322;
+    background: #4caeaf;
     outline: 0;
+    text-decoration: none;
 }
 
 
-@media (max-width: 750px) {
-    .btn {
-        margin: 0.2em 0;
-    }
+.btn.priority{
+  background: #4CAF50;
+}
+.btn.priority:hover{
+  background: #4caeaf;
+}
+
+.btn.secondary{
+  background: #145a58;
+}
+.btn.secondary:hover{
+  background: #4caeaf;
 }
 
 
@@ -279,23 +256,6 @@ input[type="submit"].priority {
 
 
 
-.details {
-  background-color:#25292f;
-  padding:.5em;
-  margin-bottom: .5em;
-}
-
-
-.items .item:not(:first-of-type) {
-  margin-top:4em;
-}
-/* .items .item:not(:first-of-type) h3{
-  margin-top:4em;
-} */
-.items .item {
-  background:#37474a;
-  padding:1em;
-}
 
 .error {
   color:#e64848;
@@ -356,6 +316,71 @@ input[type="submit"].priority {
   margin:auto;
 }
 
-/* .student.grid .flex > li:first-of-type{
-  flex: 0 1 50px;
-} */
+
+.tasks h3{
+    border-bottom: 1px solid #c1c1c1;
+    padding:0;
+    margin-bottom:1em;
+    font-weight: normal;
+    font-size: 2em;
+}
+
+.tasks .items:not(:first-of-type) h3{
+  margin-top:2em;
+}
+
+.tasks .item {
+  border: solid 1px #676767;
+padding: 1em;
+margin-bottom: 1em;
+border-radius: .5em;
+}
+
+.tasks .item p {
+  margin-bottom:0;
+}
+.tasks .item{
+  display:grid;
+  grid-column-gap: 10px;
+  grid-template-columns: 70% 30%;
+}
+.tasks .icon img{
+  filter: invert(1);
+  float:right;
+}
+
+
+.small {
+  font-size: .9em;
+  color: #879096;
+}
+
+
+.pill {
+  background-color: #51606f;
+    padding: .5em;
+    margin: 0;
+    color: #fff;
+}
+
+.pill.pass {
+  background-color:#177b17;
+}
+
+.pill.referral {
+  background-color:#b54747;
+}
+
+.flag.ehcp {
+  background: #df7514;
+}
+
+
+.student h3{
+    border-bottom: 1px solid #c1c1c1;
+    padding:0;
+    margin-bottom:1em;
+    font-weight: normal;
+    font-size: 2em;
+        margin-top: 2em;
+}

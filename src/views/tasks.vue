@@ -1,14 +1,21 @@
 <template>
-  <div class="items">
+  <div class="tasks">
     <h1>Tasks</h1>
     <div v-if="error">{{ error }}</div>
+    <p class="note">Need to adjust ordering</p>
     <p class="note">Note: will add task numbers in seperatly so that we can reorganise them</p>
-    <div v-for="task in tasks" class='item' :key="task.title">
-      <h3>{{ task.title }}:</h3>
+    <div v-for="task in tasks" class='items' :key="task.title">
+      <h3>{{ task.title }}</h3>
       <p>{{ task.desc }}</p>
 
-      <div v-for="items in task.items" :key="items.title" class="details">
-        {{ items.title }} : {{ items.text }}
+      <div v-for="items in task.items" :key="items.title" class="item">
+        <div class="">
+          <p>{{ items.title }}</p>
+          <p class="small">{{ items.text }}</p>
+        </div>
+        <div class="icon">
+          <img  src="../assets/icons/more_vert-24px.svg">
+        </div>
       </div>
 
 

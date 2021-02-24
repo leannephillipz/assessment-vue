@@ -1,10 +1,14 @@
 <template>
-  <div class="items">
+  <div class="student">
     <div v-if="error" class="error">{{ error }}</div>
 
     <!-- <p>Student {{ $route.params.slug }} {{ props.slug }}</p> -->
     <h1>{{ student.fname }} {{ student.lname }}</h1>
 <p class="note">In Dev - need to pull and cross reference data</p>
+<p>Student ID: {{ student.sid }}</p>
+<p>Date of Birth: {{ student.dob }} Age: {xx}</p>
+<a :href="student.email" class="btn">Email Student</a>
+<h3>Task Assessment</h3>
     <ul class="student grid">
       <li>
         <ul class="flex header">
@@ -18,7 +22,7 @@
         <ul class="flex">
         <li>1.1</li>
           <li>Job Roles</li>
-          <li>Pass</li>
+          <li><span class="pill pass">pass</span></li>
           <li></li>
         </ul>
       </li>
@@ -26,7 +30,7 @@
         <ul class="flex">
           <li>1.2</li>
           <li>Types of employment</li>
-          <li>Pass</li>
+          <li><span class="pill pass">pass</span></li>
           <li></li>
         </ul>
       </li>
@@ -34,7 +38,7 @@
         <ul class="flex">
           <li>1.3</li>
           <li>Evaluation</li>
-          <li>referral</li>
+          <li><span class="pill referral">referral</span></li>
           <li></li>
         </ul>
       </li>
@@ -43,7 +47,7 @@
 </template>
 
 <script>
-// import { ref } from 'vue'
+import { computed } from 'vue'
 import getDocument from '@/composables/getDocument'
 
 export default {
@@ -54,8 +58,15 @@ export default {
     const { content:student, error, load } = getDocument()
     load('students', props.slug)
 
+    // computed(() =>  student.value.email = "mailto:" + student.value.sid + "@student.gbmc.ac.uk")
+
     return { student, error }
   },
+  // computed: {
+  //   email: {
+  //     const student.value.email = "mailto:" + student.value.sid + "@student.gbmc.ac.uk"
+  //   }
+  // }
 }
 </script>
 

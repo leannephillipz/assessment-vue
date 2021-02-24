@@ -3,15 +3,16 @@
     <h1>Course</h1>
     <div v-if="error" class="error">{{ error }}</div>
     <!-- <p>Student {{ $route.params.slug }} {{ props.slug }}</p> -->
-    <p class="name">{{ course.title }}</p>
+    <p class="name">{{ course.title }} Level: {{ course.lvl }} Year: {{ course.year }}</p>
     <p>Code: {{ course.code }}</p>
     <p>Industry / Subject: {{ course.subject }}</p>
-    <p>Level: {{ course.lvl }}</p>
-    <p>Year: {{ course.year }}</p>
     <p>Awarding Body: {{ course.awardbody }}</p>
-
-    <router-link :to="{ name: 'CourseStudents', params: { code: course.code  }}">
+    <router-link :to="{ name: 'CourseStudents', params: { code: course.code  }}" class="btn">
       View Students Data
+    </router-link>
+
+    <router-link :to="{ name: 'Tasks'}" class="btn secondary">
+      View Tasks
     </router-link>
 
     <!-- <students :coursecode='code'/> -->

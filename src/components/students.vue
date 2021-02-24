@@ -2,7 +2,7 @@
   <div class="items">
     <div v-if="error" class="error">{{ error }}</div>
     <!-- <p>Student {{ $route.params.slug }} {{ props.slug }}</p> -->
-    <p>doesn't work as a component</p>
+    <p class="note">doesn't work as a component</p>
   <p>Matching Students</p>
   <div v-for="student in students">
     {{student.fname}}
