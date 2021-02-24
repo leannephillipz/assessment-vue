@@ -24,6 +24,37 @@ top: 0; */
 
   nav a {color:rgba(255,255,255,0.8);}
 
+
+  nav, {transition: 0.3s;}
+
+  nav .icon {
+    position: absolute;
+    top: 3em;
+    left: 180px;
+  }
+
+  nav .icon img {
+    color:#4CAF50;
+    background-color:#4CAF50;
+  }
+
+
+.navtoggle {
+    width:0;
+    margin:0;
+    padding:0;
+  }
+.navtoggle .links{
+     display:none;
+   }
+.navtoggle .icon{
+     left: 0;
+}
+
+.navtoggle + main {
+  margin-left: 1em;
+}
+
   /* @media (max-width: 1000px) {
 
     nav {
@@ -100,7 +131,7 @@ input[type="button"] {
     -o-transition: 0.5s;
     transition: 0.5s;
 	/*background-color: transparent;*/
-    background: #00ce89;
+    background: #4CAF50;
     outline: 0;
     border: 0;
     margin: 0.3em;
