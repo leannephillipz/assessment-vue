@@ -274,12 +274,20 @@ input[type="submit"].priority {
   color: #d4e648;
 }
 
+.grid a:hover {
+  text-decoration: none;
+}
+.grid .item {
+  border-bottom: 1px solid #c1c1c1;
+}
 
+.grid .item:hover {
+  background: #2f3f42;
+}
 
 .grid .header {
   border-bottom: 1px solid #c1c1c1;
     border-top: 1px solid #c1c1c1;
-    margin: .5em 0;
 }
 .grid .flex{
   padding: 1em 0;
