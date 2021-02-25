@@ -19,7 +19,7 @@
           <ul class="flex ">
             <li >
               <span v-if="student.flags" v-for="flag in student.flags" :key="flag">*</span></li>
-            <li>{{ student.fname }} </li>
+            <li><span v-if="student.aka">({{ student.aka }}) </span>{{ student.fname }} </li>
             <li>{{ student.lname }}</li>
             <li>{{ student.group }}</li>
             <li><span v-if="student.status">{{ student.status }}</span></li>
