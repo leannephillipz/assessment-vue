@@ -12,6 +12,7 @@ import CourseStudents from '../views/courseStudents.vue'
 import Login from '../views/auth/login.vue'
 import Signup from '@/views/auth/signup.vue'
 import Profile from '@/views/profile.vue'
+import NotFound from '@/views/404.vue'
 
 //route guards
 
@@ -105,6 +106,11 @@ const routes = [
     name: 'AddCourse',
     component: AddCourse,
     beforeEnter: requireAuth
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: NotFound
   }
 ]
 
