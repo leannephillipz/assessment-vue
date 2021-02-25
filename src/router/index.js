@@ -15,6 +15,7 @@ import Profile from '@/views/profile.vue'
 import NotFound from '@/views/404.vue'
 import Assessment from '@/views/assessment.vue'
 import AddAssessment from '@/views/addassessment.vue'
+import TaskSort from '@/views/tasksort.vue'
 
 //route guards
 
@@ -62,6 +63,12 @@ const routes = [
     path: '/tasks',
     name: 'Tasks',
     component: Tasks,
+    beforeEnter: requireAuth
+  },
+  {
+    path: '/tasksort',
+    name: 'TaskSort',
+    component: TaskSort,
     beforeEnter: requireAuth
   },
   {

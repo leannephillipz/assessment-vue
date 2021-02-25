@@ -12,13 +12,13 @@
 
     <h3>Tasks</h3>
     <div class="tasks">
-<p class="note">In Dev - need to pull and cross reference data</p>
+      <p class="note">In Dev - need to pull and cross reference data</p>
 
     <div v-for="task in tasks" class='items' :key="task.title">
       <h4>Task {{ task.order }} : {{ task.title }}</h4>
-      <div v-for="items in task.items" :key="items.title" class="item">
+      <div v-for="item in task.items" :key="item" class="item">
         <div class="">
-          <p>{{ items.title }}</p>
+          <p>{{ item.title }} : Unit {{ item.unit }} : Item {{ item.uitem }} </p>
         </div>
         <div class="icon">
           <img  src="../assets/icons/more_vert-24px.svg">
