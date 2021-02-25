@@ -67,6 +67,7 @@ const routes = [
     path: '/assessment',
     name: 'Assessment',
     component: Assessment,
+    props: true,
     beforeEnter: requireAuth
   },
   {

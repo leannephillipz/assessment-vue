@@ -14,7 +14,7 @@
     <router-link :to="{ name: 'Tasks'}" class="btn secondary">
       View Tasks
     </router-link>
-    <router-link :to="{ name: 'Assessment'}" class="btn secondary">
+    <router-link :to="{ name: 'Assessment', params: { code: course.code, course: course.short }}" class="btn secondary">
       Assessment Criteria
     </router-link>
 

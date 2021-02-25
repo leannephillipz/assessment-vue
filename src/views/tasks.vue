@@ -2,7 +2,7 @@
   <div class="tasks">
     <h1>Tasks</h1>
     <div v-if="error">{{ error }}</div>
-    <div v-for="task in tasks" class='items' :key="task.title">
+    <div v-for="task in tasks" class='items' :key="task.id">
       <h3>Task {{ task.order }} : {{ task.title }}</h3>
       <p>{{ task.desc }}</p>
 
