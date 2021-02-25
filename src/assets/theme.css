@@ -285,7 +285,7 @@ input[type="submit"].priority {
 }
 
 .grid .flex > li{
-  flex: 1 1 50px;
+    flex: 1 0 100px;
   text-transform: capitalize;
 }
 
@@ -295,12 +295,16 @@ input[type="submit"].priority {
 .students.grid .flex > li:first-of-type{
   flex: 0 1 20px;
 }
+
+
+
+.students.grid .flex li:nth-child(4), .students.grid .flex li:nth-child(5) {
+    flex: 0 1 70px;
+}
 .students.grid .flex > li:last-of-type{
   margin-left:auto;
-  flex: 1 0 200px;
+  flex: 1 0 auto;
 }
-
-
 
 .fullpage {
   width: 100%;
