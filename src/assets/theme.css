@@ -329,6 +329,10 @@ input[type="submit"].priority {
   margin-top:2em;
 }
 
+.tasks .items:not(:first-of-type) h4{
+  margin-top:2em;
+}
+
 .tasks .item {
   border: solid 1px #676767;
 padding: 1em;

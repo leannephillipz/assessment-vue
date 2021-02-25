@@ -22,9 +22,9 @@ export default {
   name: 'Courses',
   components: {  },
   setup() {
-    const { content:courses, error, load } = getCollection()
+    const { content:courses, error, collect } = getCollection()
 
-     load('courses')
+     collect('courses')
 
     return { courses, error }
   },

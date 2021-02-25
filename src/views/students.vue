@@ -48,9 +48,9 @@ export default {
   name: 'Students',
   components: {  },
   setup() {
-    const { content:students, error, load } = getCollection()
+    const { content:students, error, collect } = getCollection()
 
-    load('students')
+    collect('students')
 
     return { students, error }
   },

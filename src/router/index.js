@@ -95,7 +95,7 @@ const routes = [
     beforeEnter: requireAuth
   },
   {
-    path: '/course/students/:code',
+    path: '/course/students/:code/:course',
     name: 'CourseStudents',
     component: CourseStudents,
     props: true,

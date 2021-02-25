@@ -3,7 +3,7 @@ node_modules
 /dist
 _bak
 .firebase
-.cache
+*.cache
 package-lock
 
 

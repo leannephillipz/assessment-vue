@@ -2,10 +2,8 @@
   <div class="tasks">
     <h1>Tasks</h1>
     <div v-if="error">{{ error }}</div>
-    <p class="note">Need to adjust ordering</p>
-    <p class="note">Note: will add task numbers in seperatly so that we can reorganise them</p>
     <div v-for="task in tasks" class='items' :key="task.title">
-      <h3>{{ task.title }}</h3>
+      <h3>Task {{ task.order }} : {{ task.title }}</h3>
       <p>{{ task.desc }}</p>
 
       <div v-for="items in task.items" :key="items.title" class="item">
@@ -17,9 +15,8 @@
           <img  src="../assets/icons/more_vert-24px.svg">
         </div>
       </div>
-
-
     </div>
+
   </div>
 </template>
 
@@ -31,9 +28,9 @@ export default {
   name: 'Tasks',
   components: {  },
   setup() {
-    const { content:tasks, error, load } = getCollection()
+    const { content:tasks, error, collect } = getCollection()
 
-    load('tasks')
+    collect('tasks', 'order')
 
     return { tasks, error }
   },

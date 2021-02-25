@@ -6,22 +6,43 @@ const getCollection = () => {
   const content = ref([])
   const error = ref(null)
 
-  const load = async (collection) => {
+  const collect = async (collection, orderkey) => {
+
     try {
-      const res = await projectFirestore.collection(collection).get()
+
+      if (orderkey) {
+        const res = await projectFirestore.collection(collection)
+        .orderBy('order')
+        .get()
+
+
+        content.value = res.docs.map(doc => {
+           return { ...doc.data(), id: doc.id }
+         })
+
+      } else {
+        const res = await projectFirestore.collection(collection).get()
+        content.value = res.docs.map(doc => {
+           return { ...doc.data(), id: doc.id }
+         })
+      }
+
+      // const res = await projectFirestore.collection(collection).get()
       // console.log(res.docs)
 
-      content.value = res.docs.map(doc => {
+      // content.value = res.docs.map(doc => {
         // console.log(doc.data())
-        return { ...doc.data(), id: doc.id }
-      })
+         // return { ...doc.data(), id: doc.id }
+      // })
+
+      // return content.value
     }
     catch(err) {
       error.value = err.message
     }
   }
 
-  return { content, error, load }
+  return { content, error, collect }
 }
 
 export default getCollection

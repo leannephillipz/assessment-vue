@@ -4,12 +4,30 @@
 
     <!-- <p>Student {{ $route.params.slug }} {{ props.slug }}</p> -->
     <h1>{{ student.fname }} {{ student.lname }}</h1>
+    <p class="pill" :class="student.status">Status : {{ student.status }}</p>
+
+    <p>Student ID: {{ student.sid }}</p>
+    <p>Date of Birth: {{ student.dob }} Age: {xx}</p>
+    <a :href="student.email" class="btn">Email Student</a>
+
+    <h3>Task Assessment</h3>
+    <div class="tasks">
 <p class="note">In Dev - need to pull and cross reference data</p>
-<p>Student ID: {{ student.sid }}</p>
-<p>Date of Birth: {{ student.dob }} Age: {xx}</p>
-<a :href="student.email" class="btn">Email Student</a>
-<h3>Task Assessment</h3>
-    <ul class="student grid">
+
+    <div v-for="task in tasks" class='items' :key="task.title">
+      <h4>Task {{ task.order }} : {{ task.title }}</h4>
+      <div v-for="items in task.items" :key="items.title" class="item">
+        <div class="">
+          <p>{{ items.title }}</p>
+        </div>
+        <div class="icon">
+          <img  src="../assets/icons/more_vert-24px.svg">
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- <ul class="student grid">
       <li>
         <ul class="flex header">
         <li>Task 1:</li>
@@ -42,12 +60,16 @@
           <li></li>
         </ul>
       </li>
-    </ul>
+    </ul> -->
+
+
+
   </div>
 </template>
 
 <script>
 import { computed } from 'vue'
+import getCollection from '../composables/getCollection'
 import getDocument from '@/composables/getDocument'
 
 export default {
@@ -57,10 +79,12 @@ export default {
     // console.log(props.slug)
     const { content:student, error, load } = getDocument()
     load('students', props.slug)
+    const { content:tasks, collect } = getCollection()
+    collect('tasks', 'order')
 
     // computed(() =>  student.value.email = "mailto:" + student.value.sid + "@student.gbmc.ac.uk")
 
-    return { student, error }
+    return { student, error, tasks }
   },
   // computed: {
   //   email: {

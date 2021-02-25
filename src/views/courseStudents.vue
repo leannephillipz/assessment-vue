@@ -1,6 +1,6 @@
 <template>
 
-  <h1>Course Students</h1>
+  <h1>{{course}} Students</h1>
   <div v-if="error">{{ error }}</div>
 
     <ul class="students grid">
@@ -24,7 +24,7 @@
           <li>{{ student.group }}</li>
           <li>
             <span v-if="student.status" class="pill" :class="student.status">{{ student.status }}</span>
-            <span v-else class="pill"> not graded </span>
+            <!-- <span v-else class="pill"> not graded </span> -->
           </li>
           <li></li>
         </ul>
@@ -54,13 +54,14 @@ import getmatch from '@/composables/crossreference'
 
 export default {
   name: 'CourseStudents',
-  props: ['code'],
+  props: ['code', 'course'],
   setup(props) {
 
     const { documents:students, error, load } = getmatch('students', props.code, 'coursecode')
     // load('students', props.code, 'cousecode')
+    // console.log(props.course)
 
-    return { students, error }
+    return { students, error, course:props.course }
   }
 }
 </script>

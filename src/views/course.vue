@@ -7,7 +7,7 @@
     <p>Code: {{ course.code }}</p>
     <p>Industry / Subject: {{ course.subject }}</p>
     <p>Awarding Body: {{ course.awardbody }}</p>
-    <router-link :to="{ name: 'CourseStudents', params: { code: course.code  }}" class="btn">
+    <router-link :to="{ name: 'CourseStudents', params: { code: course.code, course: course.short }}" class="btn">
       View Students Data
     </router-link>
 
