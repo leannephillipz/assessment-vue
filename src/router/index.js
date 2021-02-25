@@ -14,6 +14,7 @@ import Signup from '@/views/auth/signup.vue'
 import Profile from '@/views/profile.vue'
 import NotFound from '@/views/404.vue'
 import Assessment from '@/views/assessment.vue'
+import AddAssessment from '@/views/addassessment.vue'
 
 //route guards
 
@@ -67,6 +68,13 @@ const routes = [
     path: '/assessment',
     name: 'Assessment',
     component: Assessment,
+    props: true,
+    beforeEnter: requireAuth
+  },
+  {
+    path: '/addassessment',
+    name: 'AddAssessment',
+    component: AddAssessment,
     props: true,
     beforeEnter: requireAuth
   },

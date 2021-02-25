@@ -26,8 +26,8 @@
         <input v-model="item.text" type="text" placeholder="text">
         <input v-model="item.refer" type="text" placeholder="Referral Text">
         <input v-model="item.pass" type="text" placeholder="Pass Text">
-        <input v-model="item.pass" type="good" placeholder="Good text">
-        <input v-model="item.pass" type="excellent" placeholder="Excellent text">
+        <input v-model="item.good" type="text" placeholder="Good text">
+        <input v-model="item.excellent" type="text" placeholder="Excellent text">
         <!-- <input v-model="item.text" type="text" @keydown.enter.prevent="handleKeydown"> -->
         <span @click="handleClick" class="btn">Add this item</span>
       </div>
@@ -53,7 +53,17 @@ export default {
     const item = ref({})
     const items = ref([])
     // const uuid = randomid()
+    const handleClick = () => {
+      if (!items.value.includes(item.value)) {
+        // item.value = item.value.replace(/\s/g,'') // remove all whitespace
+        items.value.push(item.value)
+        console.log(items.value)
+      }
+      item.value = {}
+    }
 
+
+    
     const handleSubmit = async () => {
       try {
         // const ran = await randomid()
@@ -73,14 +83,7 @@ export default {
       }
     }
 
-    const handleClick = () => {
-      if (!items.value.includes(item.value)) {
-        // item.value = item.value.replace(/\s/g,'') // remove all whitespace
-        items.value.push(item.value)
-        console.log(items.value)
-      }
-      item.value = {}
-    }
+
 
     return { desc, title, item, items, handleSubmit, handleClick }
   },

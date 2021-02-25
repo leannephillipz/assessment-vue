@@ -2,18 +2,21 @@
 
     <nav :class="shownav ? 'navtoggle' : ''" v-if="user">
       <div class="links">
-        <router-link :to="{ name: 'Home' }">Home</router-link>
-        <router-link :to="{ name: 'Courses' }">Courses</router-link>
-        <router-link :to="{ name: 'Students' }">Students</router-link>
+        <router-link :to="{ name: 'Home' }" @click="toggle" >Home</router-link>
+        <router-link :to="{ name: 'Courses' }" @click="toggle" >Courses</router-link>
+        <router-link :to="{ name: 'Students' }" @click="toggle" >Students</router-link>
+        <router-link :to="{ name: 'Assessment' }" @click="toggle" >Assessment</router-link>
         <router-link :to="{ name: 'Tasks' }" @click="toggle" >Tasks</router-link>
         <hr>
-        <router-link :to="{ name: 'AddTask' }">Create Task</router-link>
-        <router-link :to="{ name: 'AddCourse' }">Create Course</router-link>
-        <router-link :to="{ name: 'AddStudent' }">Create Student</router-link>
+        <p>Create:</p>
+        <router-link :to="{ name: 'AddCourse' }" @click="toggle" >Course</router-link>
+        <router-link :to="{ name: 'AddStudent' }" @click="toggle" >Student</router-link>
+        <router-link :to="{ name: 'AddTask' }" @click="toggle" >Task</router-link>
+        <router-link :to="{ name: 'AddAssessment' }" @click="toggle" >Assessment</router-link>
       </div>
       <div class="icon">
-        <img v-if="shownav"  @click="toggle" src="../assets/icons/chevron_right-24px.svg" alt="">
-        <img v-if="!shownav"  @click="toggle" src="../assets/icons/chevron_left-24px.svg" alt="">
+        <img v-if="shownav"  @click="toggle" src="../assets/icons/chevron_left-24px.svg" alt="">
+        <img v-if="!shownav"  @click="toggle" src="../assets/icons/chevron_right-24px.svg" alt="">
       </div>
     </nav>
 

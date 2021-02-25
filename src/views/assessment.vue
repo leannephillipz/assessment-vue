@@ -1,21 +1,24 @@
 <template>
   <div class="tasks">
-    <h1>{{course}} Assessment</h1>
+    <!-- <h1>{{course}} </h1> -->
+    <h1>Assessment</h1>
     <div v-if="error">{{ error }}</div>
-    <div v-for="item in content" class='items' :key="item.id">
-      <h3>Unit {{ item.unit }} : {{ item.item }}</h3>
-      <p>{{ item.criteria }}</p>
-      <p>{{ item.outcome }}</p>
-      <p>{{item.feedback}}</p>
-      <!-- <div v-for="criterion in item.feedback " :key="criterion.outcome" class="item">
+    <div v-for="unit in units" class='items' :key="unit.id">
+      <h3>Unit: {{ unit.unit }} </h3>
+      <p>{{ unit.title }}</p>
+      <p>{{ unit.aim }}</p>
+
+      <div v-for="item in unit.items" :key="item" class="item">
         <div class="">
-          <p>{{ criterion.criteria }}</p>
-          <p class="small">{{ criterion.outcome }}</p>
+          <p>{{ item.id }} : {{ item.criteria }}</p>
+          <p class="small">{{ item.outcome }}</p>
         </div>
         <div class="icon">
           <img  src="../assets/icons/more_vert-24px.svg">
         </div>
-      </div> -->
+      </div>
+
+
     </div>
 
   </div>
@@ -28,13 +31,13 @@ import getCollection from '../composables/getCollection'
 export default {
   name: 'Tasks',
   components: {  },
-  props: ['code', 'course'],
+  // props: ['code', 'course'],
   setup() {
-    const { content, error, collect } = getCollection()
+    const { content:units, error, collect } = getCollection()
 
-    collect('assessment')
+    collect('units', 'unit')
 
-    return { content, error }
+    return { units, error }
   },
 }
 </script>

@@ -12,7 +12,7 @@ const getCollection = () => {
 
       if (orderkey) {
         const res = await projectFirestore.collection(collection)
-        .orderBy('order')
+        .orderBy(orderkey)
         .get()
 
 

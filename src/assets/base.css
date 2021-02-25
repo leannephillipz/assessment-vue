@@ -142,7 +142,7 @@ input,
 textarea,
 select {
     width: 100%;
-    min-width: 200px;
+    /* min-width: 200px; */
     background-color: #fff;
     box-shadow: none;
     box-sizing: border-box;
