@@ -5,13 +5,15 @@
       <form @submit.prevent="handleSubmit" class="stacked" >
 
         <fieldset>
-          <label for="fname">First Name</label>
+          <label >First Name</label>
           <input v-model="fname" type="text" name="fname" class="fname">
-          <label for="lname">Last Name</label>
+          <label >Last Name</label>
           <input v-model="lname" type="text" name="lname" class="lname">
-          <label for="lname">Group</label>
+          <label >Group</label>
           <input v-model="group" type="text" name="group" class="group">
-          <label for="lname">CourseCode</label>
+          <label>Student ID</label>
+          <input v-model="sid" type="text" name="group" class="group">
+          <label >CourseCode</label>
           <input v-model="coursecode" type="text" name="group" class="group">
           <!-- <label for="name">Student ID</label>
           <input type="text" name="sid" value="" class="sid" > -->
@@ -44,6 +46,7 @@ export default {
     const flags = ref([])
     const group = ref('')
     const status = ref('')
+    const sid = ref('')
     const coursecode = ref('FEL3Y1GD2020')
 
 
@@ -64,6 +67,7 @@ export default {
         flags: flags.value,
         group: group.value,
         status: status.value,
+        sid: status.sid,
         coursecode: coursecode.value
       }
       // await fetch('http://localhost:3000/students', {
