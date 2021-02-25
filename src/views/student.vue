@@ -4,13 +4,13 @@
 
     <!-- <p>Student {{ $route.params.slug }} {{ props.slug }}</p> -->
     <h1>{{ student.fname }} {{ student.lname }}</h1>
-    <p class="pill" :class="student.status">Status : {{ student.status }}</p>
+    <p >Status : <span class="pill" :class="student.status">{{ student.status }}</span> </p>
 
     <p>Student ID: {{ student.sid }}</p>
     <p>Date of Birth: {{ student.dob }} Age: {xx}</p>
-    <a :href="student.email" class="btn">Email Student</a>
+    <a :href="student.email" class="btn">Email Student</a> <a href="" class="btn secondary">View Assessment Sheet</a>
 
-    <h3>Task Assessment</h3>
+    <h3>Tasks</h3>
     <div class="tasks">
 <p class="note">In Dev - need to pull and cross reference data</p>
 

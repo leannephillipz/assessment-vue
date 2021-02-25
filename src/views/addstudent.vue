@@ -90,13 +90,5 @@ export default {
 </script>
 
 <style>
-.feedback {}
 
-  .pill {
-    border-radius: .5em;
-    background: #7da017;
-    display: inline-block;
-    padding:0.5em;
-    margin-right: .3em;
-  }
 </style>
