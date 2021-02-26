@@ -403,25 +403,29 @@ border-radius: .5em;
 
 .sort{
   position:relative;
+  border-left: solid 1px #676767;
+  padding-left: 1em;
+  display: inline-block;
+  border-image: linear-gradient(to bottom, transparent, yellow, transparent) 1 100% ;
 }
-.sort h3 {
+
+.sort > li::before{
+  content: "";
+    width: 20px;
+    height: 20px;
+    transform: translate(-35px, 5px);
+    background: yellow;
+    display: block;
+    position: absolute;
+}
+.sort h4 {
   margin: 0;
     padding: 0;
 }
 
-.sort h3::before{
-  content: "";
-    width: 20px;
-    height: 20px;
-    transform: translate(-25px, 5px);
-    background: white;
-    display: block;
-    position: absolute;
-}
-.sort{
-  border-left: solid 1px #676767;
-  padding-left: 1em;
-  display: inline-block;
+
+.sort li {
+  margin-left: .5em;
 }
 
 .sort ul li {
@@ -429,4 +433,5 @@ border-radius: .5em;
   padding: 1em;
   margin-top: 1em;
   border-radius: .5em;
+
 }

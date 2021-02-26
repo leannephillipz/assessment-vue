@@ -14,8 +14,7 @@
     justify-content: flex-start;
 }
 
-.flex > * { box-sizing: border-box;}
-
+.flex > * { box-sizing: border-box; flex: 1 1 auto;} /* default */
 .flex.colx2 > * {
     flex: 1 0 45%;
   padding-right:1rem;}

@@ -7,6 +7,7 @@
         <router-link :to="{ name: 'Students' }" @click="toggle" >Students</router-link>
         <router-link :to="{ name: 'Assessment' }" @click="toggle" >Assessment</router-link>
         <router-link :to="{ name: 'Tasks' }" @click="toggle" >Tasks</router-link>
+        <router-link :to="{ name: 'TaskSort' }" @click="toggle" >Task Match</router-link>
         <hr>
         <p>Create:</p>
         <router-link :to="{ name: 'AddCourse' }" @click="toggle" >Course</router-link>
