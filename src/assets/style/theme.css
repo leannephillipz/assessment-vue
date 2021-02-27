@@ -361,6 +361,7 @@ border-radius: .5em;
   display: inline-block;
   float:right;
   padding-top:.3em;
+  text-align: right;
 }
 .tasks .icon img{
   filter: invert(1);

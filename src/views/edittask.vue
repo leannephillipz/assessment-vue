@@ -9,7 +9,7 @@
     <label>Title: </label>
     <input type="text" v-model="task.title">
     <label>Description:</label>
-    <textarea v-model="task.desc" required></textarea>
+    <textarea v-model="task.desc"></textarea>
 
 
 
@@ -23,7 +23,13 @@
         <input type="text" v-model="item.title">
 
         <label>Text:</label>
-        <textarea v-model="item.text" required></textarea>
+        <textarea v-model="item.text" ></textarea>
+
+        <p>Assessment</p>
+        <label>Unit:</label>
+        <input type="text" v-model="item.unit" class="short">
+        <label>Unit Item:</label>
+        <input type="text" v-model="item.unititem" class="short">
 
       </div>
     </div>
@@ -69,7 +75,7 @@ export default {
         // console.log(data)
         const res = await projectFirestore.collection('tasks').doc(task.value.id).update(data)
         // console.log(res) // can see the id and path of doc created
-        router.push({ name: 'Home' })
+        router.go(-1)
       } catch(err) {
           console.log(err)
       }

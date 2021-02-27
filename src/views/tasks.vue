@@ -16,7 +16,7 @@
           <p class="small">{{ items.text }}</p>
         </div>
         <div class="icon">
-          <img  src="../assets/icons/more_vert-24px.svg">
+          .
         </div>
       </div>
     </div>

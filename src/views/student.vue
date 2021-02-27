@@ -4,14 +4,18 @@
 
     <!-- <p>Student {{ $route.params.slug }} {{ props.slug }}</p> -->
     <h1>{{ student.fname }} {{ student.lname }}</h1>
-    <p >Status : <span class="pill" :class="student.status">{{ student.status }}</span> </p>
+
 
     <p>Student ID: {{ student.sid }}</p>
     <p>Date of Birth: {{ student.dob }} Age: {xx}</p>
-    <a :href="student.email" class="btn">Email Student</a> <a href="" class="btn secondary">View Assessment Sheet</a>
+    <a :href="student.email" class="btn">Email Student</a>
+    <a href="" class="btn secondary">View Assessment Sheet</a>
+    
 
-    <h3>Tasks</h3>
+    <h3>Summary</h3>
+    <p >Status : <span class="pill" :class="student.status">{{ student.status }}</span> </p>
     <div class="tasks">
+      <p class="note">Going to put some kind of summary here, possibly pulling refered tasks only and key data</p>
       <p class="note">In Dev - need to pull and cross reference data</p>
 
     <div v-for="task in tasks" class='items' :key="task.title">
