@@ -8,7 +8,7 @@ const install = (app, options) => {
   app.config.globalProperties.$plugin = getData()
   // app.$plugin = this
   app.provide('vPlugin', options)
-  console.log(app.config.globalProperties)
+  // console.log(app.config.globalProperties)
 
   app.directive('highlight', {
     beforeMount(el, binding, vnode) {
