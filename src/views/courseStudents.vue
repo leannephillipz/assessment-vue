@@ -57,7 +57,7 @@ export default {
   props: ['code', 'course'],
   setup(props) {
 
-    const { documents:students, error, load } = getmatch('students', props.code, 'coursecode')
+    const { content:students, error } = getmatch('students', props.code, 'coursecode')
     // load('students', props.code, 'cousecode')
     // console.log(props.course)
 
