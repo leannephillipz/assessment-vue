@@ -5,10 +5,10 @@ import vPlugin from './plugins/plugin'
 import { projectAuth } from './firebase/config'
 
 
-import './assets/normalise.css'
-import './assets/base.css'
-import './assets/flex.css'
-import './assets/theme.css'
+import './assets/style/normalise.css'
+import './assets/style/base.css'
+import './assets/style/flex.css'
+import './assets/style/theme.css'
 
 
 

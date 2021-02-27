@@ -135,7 +135,7 @@ input[type="button"]:hover{
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-form {    max-width: 400px;}
+form {max-width: 400px;}
 
 
 input,
@@ -175,7 +175,7 @@ input, textarea, select {
 
 
 textarea {
-    min-height: 65px;
+    min-height: 100px;
 }
 
 
@@ -321,6 +321,10 @@ input[type="submit"].priority {
 }
 
 
+
+
+
+
 .tasks h3{
   border-bottom: 1px solid coral;
   padding: 0;
@@ -338,20 +342,25 @@ input[type="submit"].priority {
   margin-top:2em;
 }
 
-.tasks .item {
+.tasks .item, .task .item {
   border: solid 1px #676767;
 padding: 1em;
 margin-bottom: 1em;
 border-radius: .5em;
 }
 
-.tasks .item p {
+.tasks .item p, .task .item p {
   margin-bottom:0;
 }
 .tasks .item{
   display:grid;
   grid-column-gap: 10px;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 90% 10%;
+}
+.tasks .icon {
+  display: inline-block;
+  float:right;
+  padding-top:.3em;
 }
 .tasks .icon img{
   filter: invert(1);
@@ -362,6 +371,10 @@ border-radius: .5em;
 .small {
   font-size: .9em;
   color: #879096;
+}
+
+.edit p img {
+  display:inline-block;
 }
 
 

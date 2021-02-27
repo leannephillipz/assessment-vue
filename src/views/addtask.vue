@@ -63,19 +63,19 @@ export default {
     }
 
 
-    
+
     const handleSubmit = async () => {
       try {
         // const ran = await randomid()
 
-        const task = {
+        const data = {
           title: title.value,
           desc: desc.value,
-          id: Math.floor(Math.random() * 1000000), //not suitable long term
+          ref: Math.floor(Math.random() * 1000000), //not suitable long term
           items: {...items.value}
         }
 
-        const res = await projectFirestore.collection('tasks').add(task)
+        const res = await projectFirestore.collection('tasks').add(data)
         console.log(res) // can see the id and path of doc created
         router.push({ name: 'Home' })
       } catch(err) {
