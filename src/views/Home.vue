@@ -4,6 +4,8 @@
 <p class="note">this page will be set up last (probably)</p>
 <courses/>
 
+<router-link :to="{ name: 'Marker' }" class="btn">Marker</router-link>
+
 </template>
 
 <script>
