@@ -17,7 +17,8 @@ import Assessment from '@/views/assessment.vue'
 import AddAssessment from '@/views/addassessment.vue'
 import TaskSort from '@/views/tasksort.vue'
 import EditTask from '@/views/edittask.vue'
-import Marker from '@/views/marker.vue'
+import Marker from '@/views/marker/marker.vue'
+
 
 //route guards
 

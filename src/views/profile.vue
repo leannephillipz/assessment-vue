@@ -1,6 +1,6 @@
 <template>
   <h1>Profile</h1>
-  <p>not set up</p>
+  <p class="note">Contact administrator if you need to update your login/profile details.</p>
 </template>
 
 <script>

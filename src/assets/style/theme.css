@@ -395,8 +395,15 @@ border-radius: .5em;
   background-color:#177b17;
 }
 
-.pill.referral {
+.pill.referral, .pill.refer {
   background-color:#b54747;
+}
+
+.pill.excellent {
+  background-color:#a9921a;
+}
+.pill.good {
+  background-color:#33339e;
 }
 
 .flag.ehcp {
@@ -448,4 +455,13 @@ border-radius: .5em;
   margin-top: 1em;
   border-radius: .5em;
 
+}
+
+
+.marker .tooltip {
+  display: inline;
+      color: #4e4e4e;
+}
+.marker .grades {
+  margin: 3em 0;
 }
