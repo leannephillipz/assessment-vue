@@ -3,3 +3,6 @@ Can't use sub collections with Firebase with a web app.
 Can't upload an array, must be seperate details.
 
 Vuefire not currently updaated to vue 3. https://vuefire.vuejs.org/vuefire/writing-data.html#updates-to-collection-and-documents
+
+Should Tasks become assignments?
+E.g. Project > Assignment > Task instead of Project > Task > Item
