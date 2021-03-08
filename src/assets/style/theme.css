@@ -322,48 +322,64 @@ input[type="submit"].priority {
 
 
 
-
-
-
-.tasks h3{
-  border-bottom: 1px solid coral;
-  padding: 0;
-  margin-bottom: 1em;
+.details h2{
+  border-bottom: 1px solid #b2bf44;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
   font-weight: normal;
   font-size: 2em;
+  color: #b2bf44;
+  text-transform: none;
+}
+
+
+.details h3{
+  border-bottom: 1px solid coral;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+  font-weight: normal;
+  font-size: 1.5em;
   color: coral;
+  text-transform: none;
 }
 
-.tasks .items:not(:first-of-type) h3{
+.details h4{
+font-weight: normal;
+}
+
+
+.details .items:not(:first-of-type) h3{
   margin-top:2em;
 }
 
-.tasks .items:not(:first-of-type) h4{
+.details .items:not(:first-of-type) h4{
   margin-top:2em;
 }
 
-.tasks .item, .task .item {
+.details .item, .task .item {
   border: solid 1px #676767;
 padding: 1em;
 margin-bottom: 1em;
 border-radius: .5em;
 }
 
-.tasks .item p, .task .item p {
+.details .item p, .task .item p {
   margin-bottom:0;
 }
-.tasks .item{
+.details .item{
   display:grid;
   grid-column-gap: 10px;
   grid-template-columns: 90% 10%;
 }
-.tasks .icon {
+
+
+.details .edit.icon {
   display: inline-block;
   float:right;
   padding-top:.3em;
   text-align: right;
 }
-.tasks .icon img{
+.details .edit.icon img{
   filter: invert(1);
   float:right;
 }

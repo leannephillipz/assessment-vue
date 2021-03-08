@@ -25,6 +25,10 @@
 <div v-if="showdata == 4">
   <h2>{{process.coursetitle}} <br> Task: {{process.task}} <br>{{process.tasktitle}} <br> {{process.student}}</h2>
   <p>{{process.taskdesc}}</p>
+
+<p class="note">Missing the items</p>
+
+
   <div class="grades">
     <label class="pill" :class="(grade == 'refer') ? 'refer' : 'false'"><input type="radio" name="grade" value="refer" v-model="grade">
     Referal</label>

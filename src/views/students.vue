@@ -21,7 +21,7 @@
               <span v-if="student.flags" v-for="flag in student.flags" :key="flag">*</span></li>
             <li><span v-if="student.aka">({{ student.aka }}) </span>{{ student.fname }} </li>
             <li>{{ student.lname }}</li>
-            <li>{{ student.group }}</li>
+            <li>{{ student.coursecode }}</li>
             <li><span v-if="student.status" class="pill" :class="student.status">{{ student.status }}</span></li>
             <li></li>
           </ul>

@@ -1,5 +1,5 @@
 <template>
-  <div class="tasks">
+  <div class="tasks details">
     <h1>Tasks</h1>
     <div v-if="error">{{ error }}</div>
     <div v-for="task in tasks" class='items' :key="task.id">

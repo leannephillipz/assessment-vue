@@ -18,6 +18,7 @@ import AddAssessment from '@/views/addassessment.vue'
 import TaskSort from '@/views/tasksort.vue'
 import EditTask from '@/views/edittask.vue'
 import Marker from '@/views/marker/marker.vue'
+import Projects from '@/views/projects.vue'
 
 
 //route guards
@@ -66,6 +67,12 @@ const routes = [
     path: '/tasks',
     name: 'Tasks',
     component: Tasks,
+    beforeEnter: requireAuth
+  },
+  {
+    path: '/projects',
+    name: 'Projects',
+    component: Projects,
     beforeEnter: requireAuth
   },
   {
