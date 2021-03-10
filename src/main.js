@@ -27,6 +27,14 @@ projectAuth.onAuthStateChanged(() => {
 })
 
 
+// app.config.globalProperties.$filtering = () => {
+//   currencyUSD(value) {
+//     return '$' + value
+//   }
+// }
+
+
+
 
 // app.config.globalProperties.$plugin = vPlugin
 //
