@@ -11,16 +11,16 @@ const getCollection = () => {
     try {
 
       if (orderkey) {
+        console.log("Find " + collection + " and order by " + orderkey)
         const res = await projectFirestore.collection(collection)
         .orderBy(orderkey)
         .get()
-
-
         content.value = res.docs.map(doc => {
            return { ...doc.data(), id: doc.id }
          })
 
       } else {
+        console.log("Find " + collection + " no order or query")
         const res = await projectFirestore.collection(collection).get()
         content.value = res.docs.map(doc => {
            return { ...doc.data(), id: doc.id }

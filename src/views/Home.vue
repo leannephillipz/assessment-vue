@@ -3,7 +3,7 @@
 <p> &#60; &#60; check out the nav for the dev shortcuts </p>
 <p class="note">this page will be set up last (probably)</p>
 
-<div>{{ filters.uppercase(name) }}</div>
+<div>Test: {{ filters.uppercase(name) }}</div>
 <!-- <p>{{ $filtering.currencyUSD(price) }}</p> -->
 
 

@@ -1,8 +1,8 @@
 <template>
     <h3>Students</h3>
     <!-- <div v-if="error">{{ error }}</div> -->
-    <p class="note">I don't now why I can't get this to work as a compondent.</p>
-    <p class="note">maybe I need to pass in ALL the student data as a prop instead of passing as a value to query.</p>
+<p class="note">I can console log students but they don't apear here: {{ students}}</p>
+
       <ul class="students grid">
         <li>
           <ul class="flex header">
@@ -42,8 +42,9 @@
 
 <script>
 import { ref } from 'vue'
+import { projectFirestore } from '@/firebase/config'
 // import collector from '@/composables/collector.js'
-import getCollection from '@/composables/getCollection.js'
+// import getCollection from '@/composables/getCollection.js'
 
 
 
@@ -52,14 +53,51 @@ export default {
   props: ['coursecoderef'],
   setup(props) {
 
+
+    const content = ref([])
+    const error = ref(null)
+    const students = ref([])
+
     // console.log(props.coursecode)
 
     // const { content:students, error } = collector('students', 'fname', 'coursecode', props.coursecoderef)
     // const { content:students, error } = collector('students')
 
-    const { content:students, error, collect } = getCollection() // don't know why this one works but the other one doesn't - although I am able to console.log the data
-    collect('students')
-    return { students }
+    const collector = async (collection, orderkey, query, match) => {
+
+      try {
+          console.log("Find " + collection + " where " + query + " is = " +  match + " and order by " + orderkey)
+          //firebase will ask to confirm the index in the console.
+          const res = await projectFirestore.collection(collection)
+          .where(query, '==', match)
+          .orderBy('order')
+            .get()
+            .then((querySnapshot) => {
+              content.value = querySnapshot.docs.map(doc => {
+                 return { ...doc.data(), id: doc.id }
+               })
+            })
+            .catch((error) => {
+                console.log("Error getting documents: ", error);
+            });
+      }
+      catch(err) {
+        error.value = err.message
+        console.log(error.value)
+      }
+
+      students.value = content.value
+
+    return { students, error }
+    }
+
+
+    collector('students', 'fname', 'coursecode', props.coursecoderef)
+
+    console.log(students.value)
+
+
+    return { students, error }
 
   },
 }
