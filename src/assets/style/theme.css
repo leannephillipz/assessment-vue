@@ -2,7 +2,8 @@ main {
   padding:3em;
   /* margin-left: 1em; */
   margin: auto;
-  width: 60vw;
+  /* width: 60vw; */
+  width: 80vw;
 }
 
 nav {
@@ -298,9 +299,9 @@ input[type="submit"].priority {
 
 
 
-.students.grid .flex li:nth-child(4), .students.grid .flex li:nth-child(5) {
+/* .students.grid .flex li:nth-child(4), .students.grid .flex li:nth-child(5) {
     flex: 0 1 70px;
-}
+} */
 .students.grid .flex > li:last-of-type{
   margin-left:auto;
   flex: 1 0 auto;

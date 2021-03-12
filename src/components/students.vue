@@ -3,6 +3,7 @@
     <!-- <div v-if="error">{{ error }}</div> -->
     <p class="note">I don't now why I can't get this to work as a compondent.</p>
     <p class="note">maybe I need to pass in ALL the student data as a prop instead of passing as a value to query.</p>
+    <p class="note">Can't pass the whole object</p>
       <ul class="students grid">
         <li>
           <ul class="flex header">

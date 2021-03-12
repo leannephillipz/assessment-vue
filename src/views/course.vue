@@ -25,11 +25,7 @@
 
     </div>
 
-<section>
 
-  <students :coursecoderef="code" />
-  <!-- <students :coursecode="FEL3Y1GD2020" /> -->
-</section>
     <!-- <students :coursecode='code'/> -->
   </div>
 </template>
