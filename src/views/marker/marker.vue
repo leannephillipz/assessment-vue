@@ -1,6 +1,12 @@
 <template>
   <div class="marker">
 <div v-if="error">{{error}}</div>
+
+<h2 v-if="process.coursetitle">Course: {{process.coursetitle}}</h2>
+<p v-if="process.projectuid">Project: {{process.projectuid}} {{process.projecttitle}}</p>
+<p v-if="process.tasktitle">Task: {{process.task}} {{process.tasktitle}}</p>
+<p v-if="process.student">Student: {{process.student}}</p>
+
 <div v-if="showdata == 1">
   <h2>Select:</h2>
   <div v-for="course in courses" class='item' :key="course.id">
@@ -9,25 +15,28 @@
 </div>
 
 <div v-if="showdata == 2">
-  <h2>{{process.coursetitle}}</h2>
-  <div v-for="task in tasks" class='item' :key="task.id">
-      <p class="btn" @click="next(3, {task: task.order, tasktitle: task.title, taskdesc: task.desc})">Task: {{ task.order }} {{ task.title }}</p>
+  <div v-for="project in projects" class='item' :key="project.id">
+      <p class="btn" @click="next(3, {projectuid: project.uid, projecttitle: project.title, projectdesc: project.desc})">Project: {{ project.uid }} {{ project.title }}</p>
   </div>
 </div>
 
-<div id="3" v-if="showdata == 3">
-<h2>{{process.coursetitle}} <br> Task: {{process.task}}</h2>
+<div v-if="showdata == 3">
+  <div v-for="task in tasks" class='item' :key="task.id" >
+    <!-- <div v-for="task in tasks" class='item' :key="task.id" > -->
+      <p v-if="task.project == process.projectuid" class="btn" @click="next(4, {task: task.order, tasktitle: task.title, taskdesc: task.desc})">Task: {{ task.order }} {{ task.title }}</p>
+  </div>
+</div>
+
+<div id="3" v-if="showdata == 4">
+
   <div v-for="student in filteredstudents" class='item' :key="student.sid">
-      <p class="btn" @click="next(4, {student: student.fname + ' ' + student.lname, sid: student.sid})">{{ student.fname }} {{ student.lname }}</p>
+      <p class="btn" @click="next(5, {student: student.fname + ' ' + student.lname, sid: student.sid})">{{ student.fname }} {{ student.lname }}</p>
   </div>
 </div>
 
-<div v-if="showdata == 4">
-  <h2>{{process.coursetitle}} <br> Task: {{process.task}} <br>{{process.tasktitle}} <br> {{process.student}}</h2>
+<div v-if="showdata == 5">
   <p>{{process.taskdesc}}</p>
-
 <p class="note">Missing the items</p>
-
 
   <div class="grades">
     <label class="pill" :class="(grade == 'refer') ? 'refer' : 'false'"><input type="radio" name="grade" value="refer" v-model="grade">
@@ -41,6 +50,7 @@
   </div>
   <div class="checks">
           <p>Select any which apply.</p>
+          <p class="note">This bit has broken</p>
 
           <label>
   <input type="checkbox" value="Daniel" v-model="checked"/>
@@ -54,7 +64,6 @@
   <input type="checkbox" value="Hubert" v-model="checked"/>
   Hubert
 </label>
-
 
           <div >
               <label v-for="(check, index) in checks" :key="index">
@@ -73,13 +82,13 @@
                     {{item}}
                 </div>
               </div>
-        <p class="btn" @click="next(5)">next</p>
+        <p class="btn" @click="next(6)">next</p>
 
 </div>
 
 
 
-<div v-if="showdata == 5">
+<div v-if="showdata == 6">
   <h4>Comments</h4>
   <textarea name="comments" rows="8" cols="80" placeholder="Feedback text Updates dependent on selection" v-model="comments"></textarea>
   <h4>Action Plan</h4>
@@ -102,6 +111,7 @@ export default {
       courses: [],
       task: [],
       tasks: [],
+      projects:[],
       error: '',
       showdata: 1,
       students: [],
@@ -114,7 +124,7 @@ export default {
       grade: ''
     }
   },
-  mounted() {
+  created() {
     const collectdata = () => {
 
       projectFirestore.collection("courses").get()
@@ -139,6 +149,18 @@ export default {
     .catch((error) => {
       console.log("Error getting documents: ", error);
     });
+
+    projectFirestore.collection("projects").orderBy('order').get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          this.projects.push({...doc.data(), id: doc.id
+          })
+        });
+      })
+      .catch((error) => {
+        console.log("Error getting documents: ", error);
+      });
+
 
     projectFirestore.collection("checks").orderBy('order').get()
       .then((querySnapshot) => {
@@ -165,10 +187,7 @@ export default {
       console.log("Error getting documents: ", error);
   });
 
-
-
-
-    }
+}
     collectdata()
 
 
@@ -186,7 +205,7 @@ export default {
       next(next, data) {
           this.showdata = next
           this.process = {...this.process, ...data}
-          // console.log(this.process)
+          console.log(this.process)
         }
   },
   computed: {
