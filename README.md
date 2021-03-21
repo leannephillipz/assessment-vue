@@ -1,4 +1,4 @@
-# dojo-blog
+# trying global varables
 
 ## Project setup
 ```
