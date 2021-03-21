@@ -1,4 +1,4 @@
-# dojo-blog
+# first stab
 
 ## Project setup
 ```
