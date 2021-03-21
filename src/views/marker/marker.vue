@@ -1,38 +1,78 @@
 <template>
   <div class="marker">
 <div v-if="error">{{error}}</div>
-
+<!-- <div v-for="data in myJson">{{data.fname}}</div> -->
 <h2 v-if="process.coursetitle">Course: {{process.coursetitle}}</h2>
 <p v-if="process.projectuid">Project: {{process.projectuid}} {{process.projecttitle}}</p>
 <p v-if="process.tasktitle">Task: {{process.task}} {{process.tasktitle}}</p>
 <p v-if="process.student">Student: {{process.student}}</p>
 
-<div v-if="showdata == 1">
+<section v-if="showdata == 1">
   <h2>Select:</h2>
   <div v-for="course in courses" class='item' :key="course.id">
       <p class="btn" @click="getStudents(2, {coursetitle: course.title, coursecode: course.code})">{{ course.title }}</p>
   </div>
-</div>
+</section>
 
-<div v-if="showdata == 2">
+<section v-if="showdata == 2">
   <div v-for="project in projects" class='item' :key="project.id">
       <p class="btn" @click="next(3, {projectuid: project.uid, projecttitle: project.title, projectdesc: project.desc})">Project: {{ project.uid }} {{ project.title }}</p>
   </div>
-</div>
+</section>
 
-<div v-if="showdata == 3">
+<section v-if="showdata == 3">
   <div v-for="task in tasks" class='item' :key="task.id" >
     <!-- <div v-for="task in tasks" class='item' :key="task.id" > -->
       <p v-if="task.project == process.projectuid" class="btn" @click="next(4, {task: task.order, tasktitle: task.title, taskdesc: task.desc})">Task: {{ task.order }} {{ task.title }}</p>
   </div>
-</div>
+</section>
 
-<div id="3" v-if="showdata == 4">
+<section id="3" v-if="showdata == 4">
 
-  <div v-for="student in filteredstudents" class='item' :key="student.sid">
+<ul class="students grid">
+  <ul class="flex header">
+    <li>attn.</li>
+    <li>Name</li>
+    <li>Task 1</li>
+    <li>Task 2</li>
+    <li>Task 3</li>
+    <li>Task 4</li>
+  </ul>
+
+  <li v-for="student in filteredstudents" class='item' :key="student.sid">
+
+    <ul class="flex">
+      <li >
+        <span v-if="student.flags" v-for="flag in student.flags" :key="flag">*</span></li>
+      <li>
       <p class="btn" @click="next(5, {student: student.fname + ' ' + student.lname, sid: student.sid})">{{ student.fname }} {{ student.lname }}</p>
-  </div>
-</div>
+    </li>
+<!-- <li>{{student.tasks}}</li> -->
+
+<template v-for="(data, name, index) in student.tasks" :key="name">
+<li v-if="name == '1' || '2' || '3' || '4' ">
+  <!-- <p>Task {{name}}:</p> -->
+  <p>{{data.grade}}</p>
+  <p>{{data.feedback}}</p>
+</li>
+ </template>
+    <!-- <template v-for="(data, name, index) in student.tasks" :key="name"> -->
+      <!-- <li v-if="name == 'task2'">{{data}}</li> -->
+      <!-- <li > {{name}} {{data}}</li> -->
+      <!-- <li>{{data}}</li> -->
+      <!-- <li>{{name[0]}}</li>-->
+     <!-- <li>{{name[0]}} gets the first letter</li> -->
+     <!-- <li>{{name}}{{data}}</li> -->
+      <!-- <li v-if="name == 'task1'">{{data}}</li>
+       <li v-if="name == 'task2'">{{data}}</li>
+       <li v-if="name == 'task4'">{{data}}</li>
+       <li v-if="name == 'task4'">{{data}}</li> -->
+     <!-- </template> -->
+
+    </ul>
+  </li>
+</ul>
+</section>
 
 <div v-if="showdata == 5">
   <p>{{process.taskdesc}}</p>
@@ -102,11 +142,13 @@
 
 <script>
 
+import myJson from '@/data/students.json'
 import { projectFirestore } from '@/firebase/config'
 
 export default {
   data(){
     return {
+      myJson,
       course:  [],
       courses: [],
       task: [],
@@ -115,6 +157,7 @@ export default {
       error: '',
       showdata: 1,
       students: [],
+      sortstudents:[],
       student: [],
       process: [],
       checks: [],
@@ -129,11 +172,17 @@ export default {
 
       projectFirestore.collection("courses").get()
       	.then((querySnapshot) => {
+          var newdata = []
       		querySnapshot.forEach((doc) => {
-      			this.courses.push({...doc.data(), id: doc.id
-      			})
+      			newdata.push(
+              {...doc.data(), id: doc.id})
       		});
+          this.courses = newdata
+          console.log(this.courses)
+          // console.log('get data:' + JSON.stringify(newdata));
       	})
+        .then(() => {
+        })
       	.catch((error) => {
       		console.log("Error getting documents: ", error);
       	});
@@ -180,7 +229,7 @@ export default {
         // doc.data() is never undefined for query doc snapshots
         this.students.push({ ...doc.data(), id: doc.id })
         // console.log(doc.id, " => ", doc.data());
-        // console.log(this.students)
+        console.log(this.students)
       });
   })
   .catch((error) => {
@@ -189,8 +238,20 @@ export default {
 
 }
     collectdata()
-
-
+// console.log("created")
+  },
+  mounted(){
+    // console.log("mounted")
+    // let newdata = () => {
+    //    const sorting = this.students.filter(data => {
+    //      data.coursecode.includes(this.process.coursecode)
+    //     this.sortstudents.push(data)
+    //    })
+    //     // const objectArray = Object.entries(sorting);
+    //
+    //     console.log(this.sortstudents)
+    // }
+    // newdata()
   },
   methods: {
     getStudents(next, data) {
@@ -206,14 +267,22 @@ export default {
           this.showdata = next
           this.process = {...this.process, ...data}
           console.log(this.process)
-        }
+        },
+
+        // itemsContains(n) {
+        //   return this.students.tasks.indexOf(n) > -1
+        // }
   },
   computed: {
+
     filteredstudents(){
       return this.students.filter(student => {
        return student.coursecode.includes(this.process.coursecode)})
+
     }
+
   }
+
 
 }
 </script>

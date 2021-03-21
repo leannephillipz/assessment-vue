@@ -13,13 +13,14 @@ import Login from '../views/auth/login.vue'
 import Signup from '@/views/auth/signup.vue'
 import Profile from '@/views/profile.vue'
 import NotFound from '@/views/404.vue'
-import Assessment from '@/views/assessment.vue'
+import AssessmentData from '@/views/assessmentdata.vue'
 import AddAssessment from '@/views/addassessment.vue'
 import TaskSort from '@/views/tasksort.vue'
 import EditTask from '@/views/edittask.vue'
 import Marker from '@/views/marker/marker.vue'
 import Projects from '@/views/projects.vue'
-
+import Assessment from '@/views/assessment/index.vue'
+import AssessStep1 from '@/views/assessment/step1.vue'
 
 //route guards
 
@@ -89,9 +90,9 @@ const routes = [
     beforeEnter: requireAuth
   },
   {
-    path: '/assessment',
-    name: 'Assessment',
-    component: Assessment,
+    path: '/assessmentdata',
+    name: 'AssessmentData',
+    component: AssessmentData,
     props: true,
     beforeEnter: requireAuth
   },
@@ -99,6 +100,20 @@ const routes = [
     path: '/addassessment',
     name: 'AddAssessment',
     component: AddAssessment,
+    props: true,
+    beforeEnter: requireAuth
+  },
+  {
+    path: '/assessment',
+    name: 'Assessment',
+    component: Assessment,
+    props: true,
+    beforeEnter: requireAuth
+  },
+  {
+    path: '/assessment/step1',
+    name: 'AssessStep1',
+    component: AssessStep1,
     props: true,
     beforeEnter: requireAuth
   },

@@ -4,25 +4,18 @@
     <!-- <div v-if="error" class="error">{{ error }}</div> -->
 
 <div class="banner">
-  <h2 class="name">{{ course.title }} - Level: {{ course.lvl }} - Year: {{ course.year }}</h2>
+  <h2 class="name">{{ course.title }} - Level: {{ course.lvl }} -  Year: {{ course.year }}</h2>
   <p>Course Code: {{ course.code }}</p>
   <p>Industry / Subject: {{ course.subject }}</p>
   <p>Awarding Body: {{ course.awardbody }}</p>
 </div>
 
 
-<div class="links">
-    <router-link :to="{ name: 'CourseStudents', params: { code: course.code, course: course.short }}" class="btn">
-      View Students Data
-    </router-link>
-
-    <router-link :to="{ name: 'Projects'}" class="btn secondary">
-      Projects Data
-    </router-link>
-    <router-link :to="{ name: 'AssessmentData', params: { code: course.code, course: course.short }}" class="btn secondary">
-      Assessment Criteria
-    </router-link>
-
+<div class="projects">
+    <p>Projects:</p>
+    <div v-for="project in projects" class='item' :key="project.id">
+        <p class="btn" @click="next(3, {projectuid: project.uid, projecttitle: project.title, projectdesc: project.desc})">Project: {{ project.uid }} {{ project.title }}</p>
+    </div>
     </div>
 
 
@@ -32,6 +25,7 @@
 
 <script>
 import { ref } from 'vue'
+import { projectFirestore } from '@/firebase/config'
 import getDocument from '@/composables/getDocument'
 import students from '@/components/students.vue'
 
@@ -42,19 +36,25 @@ export default {
   // components: {students},
   setup(props) {
 
-  //   const data = [
-  //     {
-  //       "fname": "bugs"
-  //   },
-  //   {
-  //     "fname": "daffy"
-  // }
-  //
-  //   ]
+    const projects = ref([])
 
     const { content:course, error, load } = getDocument()
     load('courses', props.code, 'code')
-    return { course }
+
+    projectFirestore.collection("projects").orderBy('order').get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          projects.value.push({...doc.data(), id: doc.id
+          })
+        });
+      })
+      .catch((error) => {
+        console.log("Error getting documents: ", error);
+      });
+
+
+
+    return { course, projects }
 
   }
 }

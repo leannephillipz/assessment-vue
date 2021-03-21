@@ -4,7 +4,7 @@
   <div class="courses flex">
 
       <div v-for="course in courses" class='item' :key="course.id">
-        <router-link :to="{ name: 'Course', params: { code: course.code  }}">
+        <router-link :to="{ name: 'AssessStep1', params: { code: course.code  }}">
           <h3>{{ course.title }} <span>Level {{ course.lvl }}</span> </h3>
           <p>year {{ course.year }}</p>
         </router-link>
@@ -16,7 +16,7 @@
 
 <script>
 import { ref } from 'vue'
-import getCollection from '../composables/getCollection'
+import getCollection from '@/composables/getCollection'
 
 export default {
   name: 'Courses',
@@ -39,10 +39,10 @@ export default {
     margin-right: 1em;
     text-transform: capitalize;
     flex: 1 1 50%;
+    border: solid 1px #676767;
     padding: 1em;
     margin-bottom: 1em;
     border-radius: .5em;
-    background-color: #454d54;
   }
 
   .item:hover {

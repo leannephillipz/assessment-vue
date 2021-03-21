@@ -10,17 +10,16 @@ import '@/assets/style/base.css'
 import '@/assets/style/flex.css'
 import '@/assets/style/theme.css'
 
-
-
-// let app = createApp(App)
-// app.use(router)
-// app.mount("#app")
-
 let app
 
 projectAuth.onAuthStateChanged(() => {
   // mount the app when the user logs in but enable to the route guard to work.
   if (!app) {
-    app = createApp(App).use(router).mount('#app')
+    app = createApp(App, {})
+    app.use(router).mount('#app')
+
   }
 })
+
+
+console.log(app.config.globalProperties)

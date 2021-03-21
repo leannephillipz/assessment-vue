@@ -11,11 +11,17 @@ const getDocument = () => {
     try {
 
       if (query) {
-        let res = await projectFirestore.collection(collection).where(query, '==', slug).get()
-        // console.log(res.docs[0].data()) // get's only one doc
+        let res = await projectFirestore
+        .collection(collection)
+        .where(query, '==', slug)
+        .get()
+        console.log(res.docs[0].data()) // get's only one doc
         content.value = {...res.docs[0].data(), id: res.id }
       }  else {
-        let res = await projectFirestore.collection(collection).doc(slug).get()
+        let res = await projectFirestore
+        .collection(collection)
+        .doc(slug)
+        .get()
         content.value = { ...res.data(), id: res.id }
       }
 
@@ -24,7 +30,7 @@ const getDocument = () => {
       error.value = err.message
     }
     finally {
-    // console.log(content.value)
+    console.log(content.value)
   }
   }
 

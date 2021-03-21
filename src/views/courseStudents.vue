@@ -12,6 +12,7 @@
           <li>Group</li>
           <li>Status</li>
           <li></li>
+          <li></li>
         </ul>
       </li>
     <li v-for="student in students" class='item' :key="student.id">
@@ -26,6 +27,7 @@
             <span v-if="student.status" class="pill" :class="student.status">{{ student.status }}</span>
             <!-- <span v-else class="pill"> not graded </span> -->
           </li>
+          <li></li>
           <li></li>
         </ul>
       </router-link>
