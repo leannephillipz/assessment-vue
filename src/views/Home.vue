@@ -3,7 +3,7 @@
 
     <!-- <h3>Number of items in : {{$store.selected.items.length}} items(s)</h3> -->
     <ul>
-    <li v-for="(item, i) in $store.selected.items" :key="i">
+    <li v-for="(item, i) in $store.selected.scourses" :key="i">
       <span>Selected: {{item.title}}</span>
     </li>
       <li v-for="(select, i) in $store.courses" :key="i">
