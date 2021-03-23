@@ -4,7 +4,7 @@ node_modules
 _bak
 .firebase
 *.cache
-package-lock
+package-lock.json
 
 
 # local env files
