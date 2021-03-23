@@ -4,17 +4,21 @@ import students from '@/data/students.json'
 
 const store = reactive({
   selected:{
-    sitems: [  ],
-    scourses: [  ],
-    add(item){
-      if (!store.selected.scourses.length){
-        store.selected.scourses.push(item)
-      } else {
-        store.selected.scourses = []
-        store.selected.scourses.push(item)
-      }
-
+    sitems: [],
+    scourses: [],
+  },
+  addcourse(item){
+    if (!store.selected.scourses.length){
+      store.selected.scourses.push(item)
+    } else {
+      store.selected.scourses = []
+      store.selected.scourses.push(item)
+      //get students
     }
+
+  },
+  user: {
+    uname: [],
   },
   courses,
   students: students.students,

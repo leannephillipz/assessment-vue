@@ -7,9 +7,12 @@
       <span>Selected: {{item.title}}</span>
     </li>
       <li v-for="(select, i) in $store.courses" :key="i">
-        <span>{{select.title}}</span> <button @click="$store.selected.add(select)">Select</button>
+        <button @click="$store.addcourse(select)">{{select.title}}</button>
       </li>
   </ul>
+
+<button type="button" name="button" @click="$router.push({ name: 'About'})" :disabled="!$store.selected.scourses[0]">Next</button>
+<!-- disabled until a selection is made -->
 
   </div>
 </template>
