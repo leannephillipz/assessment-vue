@@ -1,0 +1,166 @@
+[
+  {
+    "id": "1",
+    "unit": "1",
+    "criteria": "Criteria for unit 1",
+    "comment": "default comments about unit 1",
+    "tasks": {
+      "task1": {
+        "criteria": "criteria info",
+        "comment": "default comment",
+        "grades": {
+          "1-1": {
+            "criteria": "criteria info",
+            "comment": "default comment",
+            "marks": {
+              "Good": "good blurb",
+              "Satisfactory": "Satisfactory blurb",
+              "Excellent": "Excellent blurb",
+              "Referal": "Referal blurb"
+            }
+          },
+          "1-2": {
+            "criteria": "criteria info",
+            "comment": "default comment",
+            "marks": {
+              "Good": "good blurb",
+              "Satisfactory": "Satisfactory blurb",
+              "Excellent": "Excellent blurb",
+              "Referal": "Referal blurb"
+            }
+          },
+          "1-3": {
+            "criteria": "criteria info",
+            "comment": "default comment",
+            "marks": {
+              "Good": "good blurb",
+              "Satisfactory": "Satisfactory blurb",
+              "Excellent": "Excellent blurb",
+              "Referal": "Referal blurb"
+            }
+          }
+        }
+      },
+      "task2": [
+        {
+          "criteria": "criteria info",
+          "comment": "default comment",
+          "grades": {
+            "2-1": {
+              "criteria": "criteria info",
+              "comment": "default comment",
+              "marks": {
+                "Good": "good blurb",
+                "Satisfactory": "Satisfactory blurb",
+                "Excellent": "Excellent blurb",
+                "Referal": "Referal blurb"
+              }
+            },
+            "2-2": {
+              "criteria": "criteria info",
+              "comment": "default comment",
+              "marks": {
+                "Good": "good blurb",
+                "Satisfactory": "Satisfactory blurb",
+                "Excellent": "Excellent blurb",
+                "Referal": "Referal blurb"
+              }
+            },
+            "2-3": {
+              "criteria": "criteria info",
+              "comment": "default comment",
+              "marks": {
+                "Good": "good blurb",
+                "Satisfactory": "Satisfactory blurb",
+                "Excellent": "Excellent blurb",
+                "Referal": "Referal blurb"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "2",
+    "unit": "2",
+    "criteria": "Criteria for unit 2",
+    "comment": "default comments about unit 2",
+    "tasks": {
+      "task1": {
+        "criteria": "criteria info",
+        "comment": "default comment",
+        "grades": {
+          "1-1": {
+            "criteria": "criteria info",
+            "comment": "default comment",
+            "marks": {
+              "Good": "good blurb",
+              "Satisfactory": "Satisfactory blurb",
+              "Excellent": "Excellent blurb",
+              "Referal": "Referal blurb"
+            }
+          },
+          "1-2": {
+            "criteria": "criteria info",
+            "comment": "default comment",
+            "marks": {
+              "Good": "good blurb",
+              "Satisfactory": "Satisfactory blurb",
+              "Excellent": "Excellent blurb",
+              "Referal": "Referal blurb"
+            }
+          },
+          "1-3": {
+            "criteria": "criteria info",
+            "comment": "default comment",
+            "marks": {
+              "Good": "good blurb",
+              "Satisfactory": "Satisfactory blurb",
+              "Excellent": "Excellent blurb",
+              "Referal": "Referal blurb"
+            }
+          }
+        }
+      },
+      "task2": [
+        {
+          "criteria": "criteria info",
+          "comment": "default comment",
+          "grades": {
+            "2-1": {
+              "criteria": "criteria info",
+              "comment": "default comment",
+              "marks": {
+                "Good": "good blurb",
+                "Satisfactory": "Satisfactory blurb",
+                "Excellent": "Excellent blurb",
+                "Referal": "Referal blurb"
+              }
+            },
+            "2-2": {
+              "criteria": "criteria info",
+              "comment": "default comment",
+              "marks": {
+                "Good": "good blurb",
+                "Satisfactory": "Satisfactory blurb",
+                "Excellent": "Excellent blurb",
+                "Referal": "Referal blurb"
+              }
+            },
+            "2-3": {
+              "criteria": "criteria info",
+              "comment": "default comment",
+              "marks": {
+                "Good": "good blurb",
+                "Satisfactory": "Satisfactory blurb",
+                "Excellent": "Excellent blurb",
+                "Referal": "Referal blurb"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+]
