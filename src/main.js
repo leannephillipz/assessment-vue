@@ -1,25 +1,14 @@
-import { createApp } from 'vue'
+import { createApp, reactive } from 'vue'
 import App from './App.vue'
-import router from './router'
-import { projectAuth } from './firebase/config'
+import Router from './router'
+import Store from './store'
 
+const app = createApp(App,{})
 
+app.use(Router)
+app.use(Store)
+app.mount('#app')
 
-import '@/assets/style/normalise.css'
-import '@/assets/style/base.css'
-import '@/assets/style/flex.css'
-import '@/assets/style/theme.css'
-
-let app
-
-projectAuth.onAuthStateChanged(() => {
-  // mount the app when the user logs in but enable to the route guard to work.
-  if (!app) {
-    app = createApp(App, {})
-    app.use(router).mount('#app')
-
-  }
-})
-
+app.config.globalProperties.$store = Store.store
 
 console.log(app.config.globalProperties)
