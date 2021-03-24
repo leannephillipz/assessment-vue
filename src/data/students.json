@@ -7,6 +7,7 @@
       "shortcode": "bugs",
       "level": 3,
       "year": 1,
+        "coursecode": "EM0090",
       "notes": ["note1", "note2"],
       "grades": {
           "unit1": "referral",
@@ -22,6 +23,7 @@
       "shortcode": "daffy",
       "level": 3,
       "year": 1,
+      "coursecode": "ZP9439",
       "notes": ["note1", "note2"],
       "grades":
         {
@@ -39,6 +41,7 @@
       "shortcode": "micky",
       "level": 3,
       "year": 1,
+      "coursecode": "YE8490",
       "notes": ["note1", "note2"],
       "grades": {
           "unit1": "referral",

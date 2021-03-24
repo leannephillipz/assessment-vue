@@ -3,7 +3,7 @@
 
     <!-- <h3>Number of items in : {{$store.selected.items.length}} items(s)</h3> -->
     <ul>
-    <li v-for="(item, i) in $store.selected.scourses" :key="i">
+    <li v-for="(item, i) in $store.selected.scourse" :key="i">
       <span>Selected: {{item.title}}</span>
     </li>
       <li v-for="(select, i) in $store.courses" :key="i">
@@ -11,7 +11,7 @@
       </li>
   </ul>
 
-<button type="button" name="button" @click="$router.push({ name: 'About'})" :disabled="!$store.selected.scourses[0]">Next</button>
+<!-- <button type="button" name="button" @click="$router.push({ name: 'About'})" :disabled="!$store.selected.scourses[0]">Next</button> -->
 <!-- disabled until a selection is made -->
 
   </div>
