@@ -11,16 +11,11 @@ const store = reactive({
   },
   addcourse(item){
 
-    router.push({ name: 'About'})
-    store.selected.scourse.push(item)
-    // let tempdump = store.students.filter(student => student.coursecode.includes("EM0090"))
-    console.log(store.selected.scourse[0].code);
-
+    // store.selected.scourse.push(item) //push adds, splice replaces.
+    store.selected.scourse.splice(0, 1, item)
     var filterArray = store.students.filter(function(student) {
     	return student.coursecode == store.selected.scourse[0].code
     })
-
-    // console.log(store.selected.sstudents.coursecode)
     store.selected.sstudents = filterArray
 
     // if (!store.selected.scourses.length){ // only need this IF we need ability to select multiple courses, so I'll strip this out.
@@ -34,7 +29,8 @@ const store = reactive({
     //   // console.log(this)
     //   //get students
     // }
-
+    console.log(store.selected.scourse[0].code);
+    router.push({ name: 'Course'})
   },
   user: {
     uname: [],
