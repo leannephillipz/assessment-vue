@@ -18,13 +18,15 @@ const getCollection = () => {
         content.value = res.docs.map(doc => {
            return { ...doc.data(), id: doc.id }
          })
+         console.log(content.value)
 
       } else {
-        console.log("Find " + collection + " no order or query")
+        console.log("Find Collection: " + collection + " no order or query")
         const res = await projectFirestore.collection(collection).get()
         content.value = res.docs.map(doc => {
            return { ...doc.data(), id: doc.id }
          })
+         console.log(content.value)
       }
 
       // const res = await projectFirestore.collection(collection).get()
