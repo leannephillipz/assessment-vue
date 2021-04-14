@@ -1,0 +1,125 @@
+
+/* Flex structure
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    /* align-content: flex-end; */
+}
+
+.flex > * { box-sizing: border-box;}
+
+.flex.cols > * {
+      flex: 1 1 40%;
+}
+
+/* .grid .flex.colx5 > *{
+  flex: 1 1 10%;
+} */
+.grid .flex > *:nth-child(1) {
+  width:100px;
+}
+
+
+.grid .flex.colx3 > *:nth-child(-n+2) {
+  width:100px;
+}
+
+.grid .flex.colx4 > *:nth-child(1) {
+  width:100px;
+}
+
+
+.grid .flex.colx4 > *:nth-child(1) {
+  width:100px;
+}
+.grid .flex.colx4 > *:nth-child(2) {
+  width:150px;
+}
+
+/* .grid .flex.colx4 > *:nth-child(-n+2) {
+  width:100px;
+} */
+
+.grid .flex > * {
+  padding:.3em;
+
+}
+.grid .flex .action {margin-left: auto}
+
+
+
+.student.grid .flex > *:nth-child(-n+4) {
+  width:100px;
+}
+.student.grid .flex > *:first-child{
+  width:20px;
+}
+
+
+/*
+
+.flex.colx3 > *:first-child {
+  flex: 1 1 20%; }
+.flex.colx3 > *:nth-child(2) {
+  flex: 1 1 20%; }
+.flex.colx3 > *:last-child {
+  flex: 1 1 60%;}
+
+.flex.colx2even > * {
+  flex: 1 1 47%;
+}
+
+.flex.colx2 > *:first-child {
+      flex: 1 0 10%; }
+
+.flex.colx2 > * {
+  flex: 1 0 80%; }
+
+.flex.colx4 > * {
+  flex: 1 1 20%; }
+
+
+.flex.colx2 > *:first-child {margin-right:20px;}
+.flex.colx2 > *:last-child {margin-left:20px;}
+
+@media (max-width: 750px) {
+    .flex:not(header) {
+        -webkit-flex-flow: column nowrap;
+        flex-flow: column nowrap;
+    }
+    .flex > *,
+    .flex.colx3 > *,
+    .flex.colx2 > * {
+        flex: 1 1 auto;
+
+    }
+
+    .flex.colx2 > *:last-child, .flex.colx2 > *:first-child {margin:0;}
+    .flex.colx2 > div {
+        padding: 0;
+    }
+}
+
+
+
+
+
+.tasks .flex > * {
+  box-sizing: border-box;
+
+}
+
+.tasks .flex  > *:first-child {
+  flex: 1 1 20%; padding-right:1em;}
+.tasks .flex  > *:nth-child(2) {
+  flex: 1 1 60%; padding-right:1em;}
+.tasks .flex > *:last-child {
+  flex: 1 1 20%;} */
