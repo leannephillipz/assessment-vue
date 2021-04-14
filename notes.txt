@@ -1,0 +1,10 @@
+
+FB Project public-facing name:
+
+project-18624726857
+
+Web client ID
+18624726857-3k04d0o7ilt16fnd5ksntbv8nlkcff32.apps.googleusercontent.com
+
+Web client secret
+XhoLxUvSTjgQ8buWw58tQCGt

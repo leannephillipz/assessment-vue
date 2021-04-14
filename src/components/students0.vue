@@ -1,7 +1,9 @@
 <template>
-    <h3>Students </h3>
-    <!-- <p>{{coursecode}}</p> -->
+    <h3>Students</h3>
     <!-- <div v-if="error">{{ error }}</div> -->
+    <p class="note">I don't now why I can't get this to work as a compondent.</p>
+    <p class="note">maybe I need to pass in ALL the student data as a prop instead of passing as a value to query.</p>
+    <p class="note">Can't pass the whole object</p>
       <ul class="students grid">
         <li>
           <ul class="flex header">
@@ -13,14 +15,14 @@
             <li></li>
           </ul>
         </li>
-      <li v-for="student in students" class='item' :key="student.id" >
+      <li v-for="student in students" class='item' :key="student.id">
         <router-link :to="{ name: 'Student', params: { slug: student.id  }}">
-          <ul class="flex" v-if="student.coursecode == coursecode">
+          <ul class="flex ">
             <li >
               <span v-if="student.flags" v-for="flag in student.flags" :key="flag">*</span></li>
             <li><span v-if="student.aka">({{ student.aka }}) </span>{{ student.fname }} </li>
             <li>{{ student.lname }}</li>
-            <li>{{ student.group }}</li>
+            <li>{{ student.coursecode }}</li>
             <li><span v-if="student.status" class="pill" :class="student.status">{{ student.status }}</span></li>
             <li></li>
           </ul>
@@ -48,7 +50,7 @@ import getCollection from '@/composables/getCollection.js'
 
 export default {
   name: 'Students',
-  props: ['coursecode'],
+  props: ['coursecoderef'],
   setup(props) {
 
     // console.log(props.coursecode)

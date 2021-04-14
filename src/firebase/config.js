@@ -34,4 +34,7 @@ const projectStorage = firebase.storage()
 
 const timestamp = firebase.firestore.FieldValue.serverTimestamp
 
+// var provider = new firebase.auth.GoogleAuthProvider();
+// provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+
 export { projectFirestore, projectAuth, projectStorage, timestamp }

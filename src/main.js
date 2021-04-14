@@ -22,4 +22,4 @@ projectAuth.onAuthStateChanged(() => {
 })
 
 
-console.log(app.config.globalProperties)
+// console.log(app.config.globalProperties)

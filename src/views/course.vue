@@ -12,12 +12,12 @@
 
 
 <div class="links">
-    <router-link :to="{ name: 'CourseStudents', params: { code: course.code, course: course.short }}" class="btn">
+    <!-- <router-link :to="{ name: 'CourseStudents', params: { code: course.code, course: course.short }}" class="btn">
       View Students Data
-    </router-link>
+    </router-link> -->
 
-    <router-link :to="{ name: 'Projects'}" class="btn secondary">
-      Projects Data
+    View: <router-link :to="{ name: 'Projects'}" class="btn secondary">
+       Project
     </router-link>
     <router-link :to="{ name: 'AssessmentData', params: { code: course.code, course: course.short }}" class="btn secondary">
       Assessment Criteria
@@ -26,7 +26,7 @@
     </div>
 
 
-    <!-- <students :coursecode='code'/> -->
+    <students :coursecode='code'/>
   </div>
 </template>
 
